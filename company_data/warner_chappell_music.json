@@ -1,0 +1,1201 @@
+{
+  "company_name": "Warner Chappell Music",
+  "industry": "Music Publishing",
+  "company_size": "501-1000",
+  "mission": "Where Songwriters Are Heard \u2014 connecting the world's greatest songwriters with opportunities that maximize the reach and value of their creative work",
+  "vision": "Be the world's leading music publisher by empowering songwriters and driving catalog value across every revenue stream globally",
+  "values": [
+    {
+      "name": "Creator First",
+      "behavioral_definition": "Every decision starts with what's best for our songwriters \u2014 their creative growth, their earnings, their careers"
+    },
+    {
+      "name": "Relentless Advocacy",
+      "behavioral_definition": "We fight for every dollar, every placement, every opportunity on behalf of our writers"
+    },
+    {
+      "name": "Collaborative Creativity",
+      "behavioral_definition": "We connect people \u2014 writers with writers, songs with screens, talent with opportunity"
+    },
+    {
+      "name": "Global Reach, Local Expertise",
+      "behavioral_definition": "We operate in 70+ countries but show up with deep local market knowledge"
+    },
+    {
+      "name": "Catalog Stewardship",
+      "behavioral_definition": "We treat every copyright as a long-term asset \u2014 protecting, growing, and maximizing its value over decades"
+    }
+  ],
+  "company_goals": {
+    "annual_priorities": [
+      {
+        "goal": "Grow publishing revenue to $1.35B",
+        "metric": "Total publishing revenue",
+        "target": "$1.35B by FY2026 (up from $1.2B)"
+      },
+      {
+        "goal": "Expand sync revenue by 25%",
+        "metric": "Sync licensing revenue",
+        "target": "$250M+ (sync grew 29% last quarter)"
+      },
+      {
+        "goal": "Achieve 95% writer retention for Gold+ tier",
+        "metric": "Writer retention rate",
+        "target": "95% retention for top-earning writers"
+      },
+      {
+        "goal": "Reduce royalty collection leakage to <3%",
+        "metric": "Royalty collection rate",
+        "target": "97%+ capture rate globally"
+      }
+    ],
+    "financial_targets": {
+      "current_arr": 1200000000,
+      "target_arr": 1350000000,
+      "gross_margin": 42.5
+    },
+    "strategic_bets": [
+      "AI-powered catalog discovery and sync matching",
+      "Expansion into emerging markets (Latin America, Africa, Southeast Asia)",
+      "Production music growth for streaming platforms and gaming",
+      "Direct-to-brand sync partnerships bypassing traditional agencies"
+    ]
+  },
+  "departments": [
+    {
+      "name": "A&R",
+      "head": "Guy Moot",
+      "headcount": 45,
+      "strategic_focus": "Sign and develop songwriters whose catalogs generate sustained, growing revenue across all streams",
+      "leading_indicators": [
+        "Signing-to-first-placement ratio",
+        "Catalog revenue per A&R",
+        "Writer development trajectory",
+        "Writer satisfaction scores"
+      ],
+      "goal_contribution": "A&R builds the catalog \u2014 every future dollar starts with a signing decision. Directly drives all revenue growth.",
+      "dependencies": [
+        "Creative Services",
+        "Sync",
+        "Legal & Business Affairs"
+      ]
+    },
+    {
+      "name": "Sync",
+      "head": "Jason Linn",
+      "headcount": 30,
+      "strategic_focus": "Maximize synchronization licensing revenue through proactive pitching, deep industry relationships, and creative catalog matching",
+      "leading_indicators": [
+        "Sync revenue per rep",
+        "Pitch-to-placement conversion",
+        "Average deal size trend",
+        "Brief response time"
+      ],
+      "goal_contribution": "Sync is the highest-margin revenue stream \u2014 grew 29% last quarter. Direct driver of the $250M sync target.",
+      "dependencies": [
+        "A&R",
+        "Creative Services",
+        "Copyright"
+      ]
+    },
+    {
+      "name": "Creative Services",
+      "head": "Carianne Marshall",
+      "headcount": 25,
+      "strategic_focus": "Facilitate co-writing sessions, connect writers across the roster, and create opportunities that compound catalog value",
+      "leading_indicators": [
+        "Co-write sessions facilitated",
+        "Session-to-cut ratio",
+        "Cross-roster collaboration rate"
+      ],
+      "goal_contribution": "Creative Services multiplies A&R's signings by connecting writers to each other and to opportunities \u2014 catalyst for catalog growth.",
+      "dependencies": [
+        "A&R",
+        "Sync"
+      ]
+    },
+    {
+      "name": "Copyright & Royalties",
+      "head": "Karen Steffens",
+      "headcount": 60,
+      "strategic_focus": "Ensure every copyright is registered globally, every royalty is collected, and metadata accuracy is maintained across all territories",
+      "leading_indicators": [
+        "Royalty collection rate",
+        "Metadata error rate",
+        "Registration lag (days)",
+        "Unclaimed royalty recovery"
+      ],
+      "goal_contribution": "Directly drives the <3% leakage target. Every point of collection efficiency = millions in recovered revenue.",
+      "dependencies": [
+        "Digital",
+        "Legal & Business Affairs"
+      ]
+    },
+    {
+      "name": "Legal & Business Affairs",
+      "head": "David Atlas",
+      "headcount": 20,
+      "strategic_focus": "Structure deals that protect WCM's interests while remaining competitive for top-tier writer signings",
+      "leading_indicators": [
+        "Deal close time",
+        "Contract renewal rate",
+        "Revenue at risk from expiring deals"
+      ],
+      "goal_contribution": "Controls deal structure that determines advance ROI and writer retention \u2014 core to 95% retention goal.",
+      "dependencies": [
+        "A&R",
+        "Finance"
+      ]
+    },
+    {
+      "name": "Digital & Strategy",
+      "head": "Kevin Gore",
+      "headcount": 20,
+      "strategic_focus": "Optimize digital revenue through platform relationships, data analytics, and emerging technology adoption",
+      "leading_indicators": [
+        "Digital revenue growth rate",
+        "Platform partnership value",
+        "Data-driven recommendation adoption"
+      ],
+      "goal_contribution": "Digital streaming is 50%+ of revenue \u2014 this team optimizes the largest and fastest-growing stream.",
+      "dependencies": [
+        "Copyright & Royalties",
+        "A&R"
+      ]
+    },
+    {
+      "name": "Finance",
+      "head": "Elena Torres",
+      "headcount": 15,
+      "strategic_focus": "Provide financial visibility into advance ROI, catalog valuation, and revenue forecasting across all streams",
+      "leading_indicators": [
+        "Advance recoupment rate",
+        "Forecast accuracy",
+        "Cost of writer acquisition"
+      ],
+      "goal_contribution": "Financial discipline ensures growth is profitable \u2014 directly supports margin targets and investment decisions.",
+      "dependencies": [
+        "Copyright & Royalties",
+        "Legal & Business Affairs"
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "name": "Guy Moot",
+      "role": "Co-Chair & CEO",
+      "role_level": "c-suite",
+      "department": "A&R",
+      "reports_to": "",
+      "role_purpose": "Set creative vision and signing strategy for the global WCM catalog",
+      "key_responsibilities": [
+        "Lead global A&R strategy",
+        "Approve major signing decisions",
+        "Build relationships with top-tier songwriters",
+        "Set creative direction across all territories"
+      ],
+      "recent_activities": [
+        {
+          "action": "Signed rising songwriter Mila Torres to exclusive deal",
+          "detail": "Torres had 3 viral tracks on TikTok in Q4 \u2014 publishing deal includes co-write commitments with existing catalog writers",
+          "source": "Salesforce",
+          "what_it_enabled": "Adds fresh commercial songwriter to roster, directly feeding the sync pipeline and contributing to the $1.35B revenue target through new catalog creation",
+          "date": "2026-03-02T15:02"
+        },
+        {
+          "action": "Reviewed Q1 signing pipeline with A&R leads",
+          "detail": "12 writers in active negotiation \u2014 8 with streaming growth >200% YoY, 4 with sync placement history",
+          "source": "Salesforce",
+          "what_it_enabled": "Pipeline coverage is strong \u2014 if 8 of 12 close, we add ~$4M in projected annual catalog value toward the revenue target",
+          "date": "2026-03-01T11:02"
+        },
+        {
+          "action": "Approved co-write session budget for Nashville team",
+          "detail": "20 co-write sessions scheduled in March \u2014 pairing new signings with established hitmakers",
+          "source": "Google Sheets",
+          "what_it_enabled": "Co-writes produce 3x more commercially viable tracks than solo sessions. This directly accelerates catalog creation for both sync and streaming revenue",
+          "date": "2026-02-26T19:02"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 95,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Catalog Stewardship for the team and reinforces it in 1:1s and retros",
+          "Creates team norms that reflect Global Reach, Local Expertise in practice"
+        ],
+        "areas_to_watch": [
+          "Tendency to take on too much \u2014 could delegate more to grow team capacity",
+          "Could expand cross-team visibility \u2014 impact stays local"
+        ]
+      },
+      "cross_functional_connections": [
+        "Creative Services",
+        "Legal & Business Affairs"
+      ],
+      "network_position": {
+        "influence_description": "Executive shaping company strategy and culture",
+        "direct_reports": [
+          "Sofia Reyes",
+          "David Park"
+        ],
+        "key_collaborators": [
+          "Nadia Okafor",
+          "Kevin Gore"
+        ]
+      }
+    },
+    {
+      "name": "Carianne Marshall",
+      "role": "Co-Chair & COO",
+      "role_level": "c-suite",
+      "department": "Creative Services",
+      "reports_to": "",
+      "role_purpose": "Drive operational excellence and creative service delivery across all departments",
+      "key_responsibilities": [
+        "Oversee creative services and writer development",
+        "Drive cross-functional collaboration",
+        "Lead operational strategy",
+        "Champion writer experience"
+      ],
+      "recent_activities": [
+        {
+          "action": "Launched writer development program cohort 2",
+          "detail": "8 emerging writers selected \u2014 6-month program with mentorship, co-writes, and studio access",
+          "source": "Google Docs",
+          "what_it_enabled": "Cohort 1 produced 12 commercially released tracks and 2 sync placements in first year. This program is the pipeline for writer retention and catalog growth",
+          "date": "2026-03-02T16:02"
+        },
+        {
+          "action": "Coordinated Nashville songwriter showcase",
+          "detail": "14 WCM writers performing for 6 music supervisors and 3 label A&Rs",
+          "source": "Google Calendar",
+          "what_it_enabled": "Last showcase generated 4 sync pitches and 2 label collaborations. Direct bridge between Creative Services and Sync revenue goals",
+          "date": "2026-03-01T10:02"
+        },
+        {
+          "action": "Published monthly writer engagement report",
+          "detail": "Gold+ tier writer engagement at 93% \u2014 up from 88% last quarter after implementing monthly check-ins",
+          "source": "Google Sheets",
+          "what_it_enabled": "Writer engagement directly predicts retention \u2014 every Gold+ writer retained saves $200-500K in catalog replacement costs. On track for 95% retention target",
+          "date": "2026-02-25T21:02"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 63,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "steady",
+        "direction": "Consistent contribution \u2014 maintaining velocity on key deliverables",
+        "pattern": "Reliable output maintaining team velocity"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Creates team norms that reflect Catalog Stewardship in practice",
+          "Models Global Reach, Local Expertise for the team and reinforces it in 1:1s and retros"
+        ],
+        "areas_to_watch": [
+          "Could expand cross-team visibility \u2014 impact stays local"
+        ]
+      },
+      "cross_functional_connections": [
+        "Copyright & Royalties",
+        "Digital & Strategy"
+      ],
+      "network_position": {
+        "influence_description": "Executive shaping company strategy and culture",
+        "direct_reports": [
+          "Jason Linn",
+          "Karen Steffens",
+          "David Atlas",
+          "Kevin Gore",
+          "Elena Torres"
+        ],
+        "key_collaborators": [
+          "Jason Linn",
+          "Lily Tran"
+        ]
+      }
+    },
+    {
+      "name": "Jason Linn",
+      "role": "SVP, Head of Sync",
+      "role_level": "vp",
+      "department": "Sync",
+      "reports_to": "Carianne Marshall",
+      "role_purpose": "Maximize sync licensing revenue through team leadership and key relationship management",
+      "key_responsibilities": [
+        "Lead global sync strategy",
+        "Manage sync team across LA, NYC, Miami",
+        "Build direct-to-brand partnerships",
+        "Drive pitch volume and conversion"
+      ],
+      "recent_activities": [
+        {
+          "action": "Secured 'Golden Hour' placement in Nike Spring campaign",
+          "detail": "6-month global usage across TV, digital, and retail \u2014 $180K sync fee negotiated",
+          "source": "Salesforce",
+          "what_it_enabled": "Single placement moves sync pipeline from $186M to $186.18M \u2014 more importantly, Nike relationship opens doors for 2-3 more placements this year toward the $250M sync target",
+          "date": "2026-03-02T19:02"
+        },
+        {
+          "action": "Pitched 15 tracks to HBO for upcoming limited series",
+          "detail": "Curated from catalog focusing on atmospheric/ambient \u2014 showrunner requested exclusive first listen",
+          "source": "Salesforce",
+          "what_it_enabled": "HBO series placements average $50-75K per track. If 3-5 land, that's $150-375K in sync revenue plus massive streaming lift from the show's audience",
+          "date": "2026-03-01T19:02"
+        },
+        {
+          "action": "Updated sync catalog metadata for AI search",
+          "detail": "Tagged 2,400 tracks with mood, tempo, instrumentation, and scene-type metadata",
+          "source": "Jira",
+          "what_it_enabled": "Music supervisors can now find our tracks 4x faster. Speed of response is the #1 factor in winning sync deals \u2014 this protects and grows our $250M target",
+          "date": "2026-02-25T19:02"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 82,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Creator First for the team and reinforces it in 1:1s and retros",
+          "Creates team norms that reflect Relentless Advocacy in practice"
+        ],
+        "areas_to_watch": [
+          "Deep focus on delivery \u2014 opportunity to step back and share strategic perspective",
+          "Tendency to take on too much \u2014 could delegate more to grow team capacity"
+        ]
+      },
+      "cross_functional_connections": [
+        "Copyright & Royalties",
+        "A&R"
+      ],
+      "network_position": {
+        "influence_description": "Executive influencing company direction and resource allocation",
+        "direct_reports": [
+          "Rachel Kim",
+          "Marcus Chen"
+        ],
+        "key_collaborators": [
+          "Kevin Gore",
+          "Guy Moot"
+        ]
+      }
+    },
+    {
+      "name": "Rachel Kim",
+      "role": "Senior Sync Representative",
+      "role_level": "ic",
+      "department": "Sync",
+      "reports_to": "Jason Linn",
+      "role_purpose": "Generate sync placements by matching catalog to briefs and building deep relationships with music supervisors",
+      "key_responsibilities": [
+        "Respond to sync briefs within 24 hours",
+        "Maintain relationships with 40+ music supervisors",
+        "Pitch proactively to film and TV",
+        "Track and report on placement revenue"
+      ],
+      "recent_activities": [
+        {
+          "action": "Pitched 8 catalog tracks to Apple for product launch",
+          "detail": "Curated ambient/electronic selections matching Apple's Q2 creative brief",
+          "source": "Salesforce",
+          "what_it_enabled": "Apple placements average $120K per track and generate 300% streaming lifts. If 2 land, that's $240K in sync revenue plus significant catalog streaming value",
+          "date": "2026-03-02T19:02"
+        },
+        {
+          "action": "Closed Toyota commercial sync \u2014 'Electric Bloom' by Chen Wei",
+          "detail": "30-second national TV spot, 3-month run \u2014 $95K all-in fee",
+          "source": "Salesforce",
+          "what_it_enabled": "Toyota placement brings sync pipeline coverage to 74% of quarterly target. Also validates Chen Wei as a commercially viable catalog asset for future pitches",
+          "date": "2026-03-01T12:02"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 68,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Embodies Collaborative Creativity \u2014 visible in how they approach problems and collaborate",
+          "Consistently demonstrates Relentless Advocacy in daily work and team interactions"
+        ],
+        "areas_to_watch": [
+          "Tendency to take on too much \u2014 could delegate more to grow team capacity",
+          "Could expand cross-team visibility \u2014 impact stays local"
+        ]
+      },
+      "cross_functional_connections": [
+        "Creative Services",
+        "Copyright & Royalties"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Kevin Gore",
+          "Aisha Johnson"
+        ]
+      }
+    },
+    {
+      "name": "Marcus Chen",
+      "role": "Sync Representative",
+      "role_level": "ic",
+      "department": "Sync",
+      "reports_to": "Jason Linn",
+      "role_purpose": "Drive sync placements in advertising and gaming verticals",
+      "key_responsibilities": [
+        "Build advertising agency relationships",
+        "Pitch catalog for brand campaigns",
+        "Develop gaming sync pipeline",
+        "Collaborate with creative services on custom pitches"
+      ],
+      "recent_activities": [
+        {
+          "action": "Streamlined vendor procurement",
+          "detail": "Consolidated vendor stack and renegotiated contracts",
+          "what_it_enabled": "Reduced operational costs by 15% annually",
+          "date": "2026-02-14",
+          "source": "Salesforce"
+        },
+        {
+          "action": "Implemented new workflow system",
+          "detail": "Rolled out automation for recurring processes",
+          "what_it_enabled": "Team reclaimed 10 hours/week for strategic work",
+          "date": "2026-02-15",
+          "source": "Jira"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 89,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Consistently demonstrates Relentless Advocacy in daily work and team interactions",
+          "Consistently demonstrates Collaborative Creativity in daily work and team interactions"
+        ],
+        "areas_to_watch": [
+          "Could expand cross-team visibility \u2014 impact stays local"
+        ]
+      },
+      "cross_functional_connections": [
+        "Legal & Business Affairs",
+        "Finance"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "James Wright",
+          "Carianne Marshall"
+        ]
+      }
+    },
+    {
+      "name": "Sofia Reyes",
+      "role": "VP, A&R \u2014 Latin",
+      "role_level": "vp",
+      "department": "A&R",
+      "reports_to": "Guy Moot",
+      "role_purpose": "Build and develop WCM's Latin music catalog through strategic signings and writer development",
+      "key_responsibilities": [
+        "Scout and sign Latin songwriters",
+        "Develop existing writers' careers and output",
+        "Connect Latin catalog to sync and streaming opportunities",
+        "Build relationships across Latin music industry"
+      ],
+      "recent_activities": [
+        {
+          "action": "Streamlined vendor procurement",
+          "detail": "Consolidated vendor stack and renegotiated contracts",
+          "what_it_enabled": "Reduced operational costs by 15% annually",
+          "date": "2026-02-24",
+          "source": "Jira"
+        },
+        {
+          "action": "Implemented new workflow system",
+          "detail": "Rolled out automation for recurring processes",
+          "what_it_enabled": "Team reclaimed 10 hours/week for strategic work",
+          "date": "2026-02-18",
+          "source": "Salesforce"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 74,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "steady",
+        "direction": "Consistent contribution \u2014 maintaining velocity on key deliverables",
+        "pattern": "Reliable output maintaining team velocity"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Creates team norms that reflect Creator First in practice",
+          "Creates team norms that reflect Relentless Advocacy in practice"
+        ],
+        "areas_to_watch": [
+          "Tendency to take on too much \u2014 could delegate more to grow team capacity"
+        ]
+      },
+      "cross_functional_connections": [
+        "Digital & Strategy",
+        "Legal & Business Affairs"
+      ],
+      "network_position": {
+        "influence_description": "Executive influencing company direction and resource allocation",
+        "direct_reports": [],
+        "key_collaborators": [
+          "David Atlas",
+          "Lily Tran"
+        ]
+      }
+    },
+    {
+      "name": "David Park",
+      "role": "Senior A&R Manager",
+      "role_level": "manager",
+      "department": "A&R",
+      "reports_to": "Guy Moot",
+      "role_purpose": "Sign emerging songwriters and develop their trajectories from emerging to gold-tier",
+      "key_responsibilities": [
+        "Identify and sign high-potential songwriters",
+        "Manage writer roster of 15+ active writers",
+        "Facilitate co-writing sessions and collaborations",
+        "Track writer development metrics and trajectory"
+      ],
+      "recent_activities": [
+        {
+          "action": "Implemented new workflow system",
+          "detail": "Rolled out automation for recurring processes",
+          "what_it_enabled": "Team reclaimed 10 hours/week for strategic work",
+          "date": "2026-02-20",
+          "source": "Slack"
+        },
+        {
+          "action": "Streamlined vendor procurement",
+          "detail": "Consolidated vendor stack and renegotiated contracts",
+          "what_it_enabled": "Reduced operational costs by 15% annually",
+          "date": "2026-02-09",
+          "source": "Slack"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 72,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Creates team norms that reflect Catalog Stewardship in practice",
+          "Creates team norms that reflect Creator First in practice"
+        ],
+        "areas_to_watch": [
+          "Deep focus on delivery \u2014 opportunity to step back and share strategic perspective",
+          "Documentation could help scale knowledge beyond immediate team"
+        ]
+      },
+      "cross_functional_connections": [
+        "Digital & Strategy",
+        "Sync"
+      ],
+      "network_position": {
+        "influence_description": "Team leader shaping department output and developing people",
+        "direct_reports": [
+          "Aisha Johnson"
+        ],
+        "key_collaborators": [
+          "Rachel Kim",
+          "Jason Linn"
+        ]
+      }
+    },
+    {
+      "name": "Aisha Johnson",
+      "role": "A&R Coordinator",
+      "role_level": "ic",
+      "department": "A&R",
+      "reports_to": "David Park",
+      "role_purpose": "Support A&R operations and ensure writers have everything they need to create",
+      "key_responsibilities": [
+        "Coordinate studio sessions and co-writes",
+        "Track submission deadlines and opportunities",
+        "Manage writer communication and needs",
+        "Prepare A&R reports and pipeline reviews"
+      ],
+      "recent_activities": [
+        {
+          "action": "Implemented new workflow system",
+          "detail": "Rolled out automation for recurring processes",
+          "what_it_enabled": "Team reclaimed 10 hours/week for strategic work",
+          "date": "2026-02-20",
+          "source": "Slack"
+        },
+        {
+          "action": "Streamlined vendor procurement",
+          "detail": "Consolidated vendor stack and renegotiated contracts",
+          "what_it_enabled": "Reduced operational costs by 15% annually",
+          "date": "2026-02-13",
+          "source": "Jira"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 76,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Embodies Collaborative Creativity \u2014 visible in how they approach problems and collaborate",
+          "Embodies Global Reach, Local Expertise \u2014 visible in how they approach problems and collaborate"
+        ],
+        "areas_to_watch": [
+          "Documentation could help scale knowledge beyond immediate team"
+        ]
+      },
+      "cross_functional_connections": [
+        "Digital & Strategy",
+        "Creative Services"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "David Atlas",
+          "Marcus Chen"
+        ]
+      }
+    },
+    {
+      "name": "Karen Steffens",
+      "role": "VP, Copyright & Royalties",
+      "role_level": "vp",
+      "department": "Copyright & Royalties",
+      "reports_to": "Carianne Marshall",
+      "role_purpose": "Ensure WCM captures every dollar owed through rigorous copyright administration and royalty collection",
+      "key_responsibilities": [
+        "Lead global copyright registration",
+        "Drive royalty collection efficiency",
+        "Reduce metadata errors",
+        "Recover unclaimed royalties across all territories"
+      ],
+      "recent_activities": [
+        {
+          "action": "Recovered $340K in unpaid mechanical royalties from DSP audit",
+          "detail": "Identified systematic under-reporting from mid-tier streaming platform \u2014 18-month backlog resolved",
+          "source": "Salesforce",
+          "what_it_enabled": "Recovery goes straight to bottom line and writer trust. This kind of precision is why our royalty leakage target of <3% is achievable \u2014 currently at 2.8%",
+          "date": "2026-03-02T18:02"
+        },
+        {
+          "action": "Deployed automated royalty matching for 12,000 unmatched works",
+          "detail": "ML model matched 89% of previously unmatched streams to correct copyright holders",
+          "source": "Jira",
+          "what_it_enabled": "12,000 works now collecting royalties they weren't before \u2014 estimated $1.2M annually in previously uncollected revenue, directly feeding the $1.35B target",
+          "date": "2026-03-01T10:02"
+        },
+        {
+          "action": "Submitted quarterly royalty statements to all Gold+ writers",
+          "detail": "284 writers received statements \u2014 3 days ahead of contractual deadline",
+          "source": "Google Sheets",
+          "what_it_enabled": "On-time, accurate royalty payments are the #1 factor in writer retention. Ahead-of-schedule delivery reinforces trust and supports the 95% retention target",
+          "date": "2026-02-24T12:02"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 77,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Relentless Advocacy for the team and reinforces it in 1:1s and retros",
+          "Creates team norms that reflect Global Reach, Local Expertise in practice"
+        ],
+        "areas_to_watch": [
+          "Could expand cross-team visibility \u2014 impact stays local",
+          "Tendency to take on too much \u2014 could delegate more to grow team capacity"
+        ]
+      },
+      "cross_functional_connections": [
+        "Legal & Business Affairs",
+        "Creative Services"
+      ],
+      "network_position": {
+        "influence_description": "Executive influencing company direction and resource allocation",
+        "direct_reports": [
+          "James Wright",
+          "Lily Tran"
+        ],
+        "key_collaborators": [
+          "Marcus Chen",
+          "Aisha Johnson"
+        ]
+      }
+    },
+    {
+      "name": "James Wright",
+      "role": "Senior Royalty Analyst",
+      "role_level": "ic",
+      "department": "Copyright & Royalties",
+      "reports_to": "Karen Steffens",
+      "role_purpose": "Identify and recover royalty leakage through data analysis and cross-territory auditing",
+      "key_responsibilities": [
+        "Audit royalty statements from collection societies",
+        "Identify unclaimed revenue",
+        "Resolve metadata discrepancies",
+        "Report on collection efficiency by territory"
+      ],
+      "recent_activities": [
+        {
+          "action": "Implemented new workflow system",
+          "detail": "Rolled out automation for recurring processes",
+          "what_it_enabled": "Team reclaimed 10 hours/week for strategic work",
+          "date": "2026-02-23",
+          "source": "Slack"
+        },
+        {
+          "action": "Streamlined vendor procurement",
+          "detail": "Consolidated vendor stack and renegotiated contracts",
+          "what_it_enabled": "Reduced operational costs by 15% annually",
+          "date": "2026-02-16",
+          "source": "Salesforce"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 60,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "steady",
+        "direction": "Consistent contribution \u2014 maintaining velocity on key deliverables",
+        "pattern": "Reliable output maintaining team velocity"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Embodies Creator First \u2014 visible in how they approach problems and collaborate",
+          "Embodies Relentless Advocacy \u2014 visible in how they approach problems and collaborate"
+        ],
+        "areas_to_watch": [
+          "Documentation could help scale knowledge beyond immediate team"
+        ]
+      },
+      "cross_functional_connections": [
+        "A&R",
+        "Finance"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Elena Torres",
+          "Kevin Gore"
+        ]
+      }
+    },
+    {
+      "name": "Lily Tran",
+      "role": "Copyright Registration Specialist",
+      "role_level": "ic",
+      "department": "Copyright & Royalties",
+      "reports_to": "Karen Steffens",
+      "role_purpose": "Minimize registration lag to ensure new signings generate revenue as quickly as possible",
+      "key_responsibilities": [
+        "Register new works across all global territories",
+        "Maintain metadata accuracy",
+        "Track registration status and resolve delays",
+        "Coordinate with collection societies worldwide"
+      ],
+      "recent_activities": [
+        {
+          "action": "Implemented new workflow system",
+          "detail": "Rolled out automation for recurring processes",
+          "what_it_enabled": "Team reclaimed 10 hours/week for strategic work",
+          "date": "2026-02-25",
+          "source": "Jira"
+        },
+        {
+          "action": "Streamlined vendor procurement",
+          "detail": "Consolidated vendor stack and renegotiated contracts",
+          "what_it_enabled": "Reduced operational costs by 15% annually",
+          "date": "2026-02-18",
+          "source": "Slack"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 82,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Consistently demonstrates Collaborative Creativity in daily work and team interactions",
+          "Embodies Global Reach, Local Expertise \u2014 visible in how they approach problems and collaborate"
+        ],
+        "areas_to_watch": [
+          "Documentation could help scale knowledge beyond immediate team"
+        ]
+      },
+      "cross_functional_connections": [
+        "Creative Services",
+        "Legal & Business Affairs"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "David Park",
+          "Rachel Kim"
+        ]
+      }
+    },
+    {
+      "name": "David Atlas",
+      "role": "SVP, Legal & Business Affairs",
+      "role_level": "vp",
+      "department": "Legal & Business Affairs",
+      "reports_to": "Carianne Marshall",
+      "role_purpose": "Structure deals that balance competitive writer terms with WCM's financial interests",
+      "key_responsibilities": [
+        "Negotiate and structure writer deals",
+        "Manage contract renewals for high-value writers",
+        "Advise on advance levels and deal terms",
+        "Protect WCM's catalog interests"
+      ],
+      "recent_activities": [
+        {
+          "action": "Closed negotiation with indie label for co-publishing deal",
+          "detail": "3-year co-pub agreement covering 40 writers \u2014 terms include admin rights and sync clearance authority",
+          "source": "Google Docs",
+          "what_it_enabled": "40 additional writers in the catalog without full signing costs. Admin rights mean we can pitch for sync without delays \u2014 directly feeds the $250M sync target",
+          "date": "2026-03-02T16:02"
+        },
+        {
+          "action": "Reviewed 8 writer contract renewals",
+          "detail": "All 8 Gold+ tier \u2014 recommended improved terms for 5 based on catalog performance growth",
+          "source": "Salesforce",
+          "what_it_enabled": "Retaining Gold+ writers at competitive terms protects $12M+ in annual catalog revenue. Improved terms for high-performers reinforces loyalty and the 95% retention target",
+          "date": "2026-03-01T19:02"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 91,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Creates team norms that reflect Creator First in practice",
+          "Models Collaborative Creativity for the team and reinforces it in 1:1s and retros"
+        ],
+        "areas_to_watch": [
+          "Documentation could help scale knowledge beyond immediate team",
+          "Could expand cross-team visibility \u2014 impact stays local"
+        ]
+      },
+      "cross_functional_connections": [
+        "Copyright & Royalties",
+        "A&R"
+      ],
+      "network_position": {
+        "influence_description": "Executive influencing company direction and resource allocation",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Rachel Kim",
+          "David Park"
+        ]
+      }
+    },
+    {
+      "name": "Kevin Gore",
+      "role": "SVP, Digital & Strategy",
+      "role_level": "vp",
+      "department": "Digital & Strategy",
+      "reports_to": "Carianne Marshall",
+      "role_purpose": "Optimize WCM's digital revenue through platform partnerships and data-driven strategy",
+      "key_responsibilities": [
+        "Manage relationships with Spotify, Apple Music, YouTube",
+        "Drive digital revenue optimization",
+        "Lead AI and emerging tech strategy",
+        "Analyze streaming data for catalog insights"
+      ],
+      "recent_activities": [
+        {
+          "action": "Launched new catalog analytics dashboard",
+          "detail": "Real-time streaming, sync, and mechanical revenue by writer, genre, and territory",
+          "source": "Jira",
+          "what_it_enabled": "A&R and Sync teams can now see which writers and tracks are generating revenue in real-time \u2014 enables faster decisions on signings, pitches, and writer development",
+          "date": "2026-03-02T20:02"
+        },
+        {
+          "action": "Presented digital strategy to leadership",
+          "detail": "Proposed AI-powered sync matching, automated metadata enrichment, and predictive catalog valuation",
+          "source": "Google Slides",
+          "what_it_enabled": "If approved, AI sync matching alone could reduce pitch-to-placement time by 60% \u2014 the speed advantage that compounds into the $250M sync target",
+          "date": "2026-03-01T12:02"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 66,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Catalog Stewardship for the team and reinforces it in 1:1s and retros",
+          "Creates team norms that reflect Collaborative Creativity in practice"
+        ],
+        "areas_to_watch": [
+          "Deep focus on delivery \u2014 opportunity to step back and share strategic perspective",
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "A&R",
+        "Creative Services"
+      ],
+      "network_position": {
+        "influence_description": "Executive influencing company direction and resource allocation",
+        "direct_reports": [
+          "Nadia Okafor"
+        ],
+        "key_collaborators": [
+          "Guy Moot",
+          "Marcus Chen"
+        ]
+      }
+    },
+    {
+      "name": "Nadia Okafor",
+      "role": "Digital Revenue Analyst",
+      "role_level": "ic",
+      "department": "Digital & Strategy",
+      "reports_to": "Kevin Gore",
+      "role_purpose": "Analyze streaming data to surface opportunities and inform A&R and sync strategy",
+      "key_responsibilities": [
+        "Monitor streaming performance across platforms",
+        "Identify trending catalog opportunities",
+        "Build dashboards for revenue visibility",
+        "Provide data-driven recommendations to A&R"
+      ],
+      "recent_activities": [
+        {
+          "action": "Streamlined vendor procurement",
+          "detail": "Consolidated vendor stack and renegotiated contracts",
+          "what_it_enabled": "Reduced operational costs by 15% annually",
+          "date": "2026-02-16",
+          "source": "Salesforce"
+        },
+        {
+          "action": "Implemented new workflow system",
+          "detail": "Rolled out automation for recurring processes",
+          "what_it_enabled": "Team reclaimed 10 hours/week for strategic work",
+          "date": "2026-02-14",
+          "source": "Jira"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 67,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Embodies Collaborative Creativity \u2014 visible in how they approach problems and collaborate",
+          "Consistently demonstrates Global Reach, Local Expertise in daily work and team interactions"
+        ],
+        "areas_to_watch": [
+          "Deep focus on delivery \u2014 opportunity to step back and share strategic perspective"
+        ]
+      },
+      "cross_functional_connections": [
+        "Creative Services",
+        "Copyright & Royalties"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Marcus Chen",
+          "David Atlas"
+        ]
+      }
+    },
+    {
+      "name": "Elena Torres",
+      "role": "VP, Finance",
+      "role_level": "vp",
+      "department": "Finance",
+      "reports_to": "Carianne Marshall",
+      "role_purpose": "Deliver financial clarity on advance ROI, catalog valuation, and revenue forecasting",
+      "key_responsibilities": [
+        "Lead financial planning and analysis",
+        "Track advance recoupment by writer",
+        "Forecast revenue by stream and territory",
+        "Support M&A due diligence on catalog acquisitions"
+      ],
+      "recent_activities": [
+        {
+          "action": "Delivered February financial close \u2014 2 days early",
+          "detail": "Monthly revenue: $108M vs $105M plan \u2014 sync revenue running 8% ahead of budget",
+          "source": "NetSuite",
+          "what_it_enabled": "Early close gives leadership an extra 2 days to react to trends. Sync over-performance means we may beat the $250M annual target \u2014 important signal for Q2 planning",
+          "date": "2026-03-02T16:02"
+        },
+        {
+          "action": "Updated board-ready financial model",
+          "detail": "Incorporated Q1 actuals into full-year forecast \u2014 raised sync guidance from $250M to $262M",
+          "source": "Google Sheets",
+          "what_it_enabled": "Raised sync guidance gives confidence to invest more in sync team headcount and catalog metadata \u2014 a virtuous cycle that accelerates revenue growth",
+          "date": "2026-03-01T11:02"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 91,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "steady",
+        "direction": "Consistent contribution \u2014 maintaining velocity on key deliverables",
+        "pattern": "Reliable output maintaining team velocity"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Creates team norms that reflect Global Reach, Local Expertise in practice",
+          "Creates team norms that reflect Catalog Stewardship in practice"
+        ],
+        "areas_to_watch": [
+          "Could expand cross-team visibility \u2014 impact stays local"
+        ]
+      },
+      "cross_functional_connections": [
+        "Digital & Strategy",
+        "Sync"
+      ],
+      "network_position": {
+        "influence_description": "Executive influencing company direction and resource allocation",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Karen Steffens",
+          "Rachel Kim"
+        ]
+      }
+    }
+  ],
+  "current_quarter": "Q1 2026",
+  "last_updated": "2026-02-27"
+}

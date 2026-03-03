@@ -1,0 +1,1078 @@
+{
+  "company_name": "Petfolk",
+  "industry": "Veterinary Care / Healthcare",
+  "company_size": "201-500",
+  "mission": "Improve the health and happiness of pets, pet parents, and veterinary professionals by reimagining the entire care experience",
+  "vision": "Transform the fragmented veterinary industry through connected care \u2014 blending modern facilities with technology and a deep commitment to empathy",
+  "values": [
+    {
+      "name": "Winning as a Team",
+      "behavioral_definition": "We place teamwork and mutual respect at the heart of personal and collective success \u2014 every role is essential, every voice matters"
+    },
+    {
+      "name": "Always Getting Better",
+      "behavioral_definition": "Lifelong learning propels us to constantly enhance our skills, support each other, and raise the standard of care"
+    },
+    {
+      "name": "Empathy First",
+      "behavioral_definition": "We embrace diverse perspectives and cultivate empathy and respect, strengthening our service to pets and their parents"
+    },
+    {
+      "name": "Fear Free",
+      "behavioral_definition": "We create low-stress, caring environments for pets and the people who love them \u2014 from clinic design to every interaction"
+    },
+    {
+      "name": "Connected Care",
+      "behavioral_definition": "We integrate everything pets and their parents need \u2014 from scheduled visits to virtual care \u2014 because the easier it is for the parent, the healthier the pet"
+    }
+  ],
+  "company_goals": {
+    "annual_priorities": [
+      {
+        "goal": "Expand to 40 clinics across 10+ markets",
+        "metric": "Clinic count",
+        "target": "40 clinics by end of 2026"
+      },
+      {
+        "goal": "Maintain 90+ NPS across all markets",
+        "metric": "Net Promoter Score",
+        "target": "90+ NPS in every market"
+      },
+      {
+        "goal": "Grow revenue 200%+ YoY",
+        "metric": "Total revenue",
+        "target": "Continue growth trajectory from Series C"
+      },
+      {
+        "goal": "Reduce veterinary staff turnover below 20%",
+        "metric": "Annual turnover rate",
+        "target": "<20% vs industry avg 30%+"
+      }
+    ],
+    "financial_targets": {
+      "gross_margin": 45.0
+    },
+    "strategic_bets": [
+      "Launch connected care app with 24/7 virtual vet access in all markets",
+      "PetfolkFlex relief staffing platform to reduce agency dependency",
+      "Partner Veterinarian ownership model to attract top clinical talent",
+      "Expand into Miami, Phoenix, and Kansas City by Q3 2026"
+    ]
+  },
+  "departments": [
+    {
+      "name": "Clinical Operations",
+      "head": "Dr. Audrey Wystrach",
+      "headcount": 120,
+      "strategic_focus": "Deliver Fear Free, best-in-class veterinary care across all clinics while maintaining 90+ NPS",
+      "leading_indicators": [
+        "NPS by clinic",
+        "Patient visits per day",
+        "Fear Free compliance rate",
+        "Same-day appointment availability"
+      ],
+      "goal_contribution": "Clinical excellence IS the product \u2014 NPS and care quality directly drive revenue growth and market reputation.",
+      "dependencies": [
+        "People & Culture",
+        "Technology",
+        "Growth & Expansion"
+      ]
+    },
+    {
+      "name": "Growth & Expansion",
+      "head": "Michael Wystrach",
+      "headcount": 15,
+      "strategic_focus": "Open new clinics on schedule in target markets while maintaining quality standards and unit economics",
+      "leading_indicators": [
+        "New clinic openings per quarter",
+        "Time from lease to open",
+        "First 90-day patient volume"
+      ],
+      "goal_contribution": "Directly drives the 40-clinic target \u2014 every new clinic is new revenue and more pets served.",
+      "dependencies": [
+        "Clinical Operations",
+        "Finance",
+        "People & Culture"
+      ]
+    },
+    {
+      "name": "Technology",
+      "head": "Oren Benvenisti",
+      "headcount": 20,
+      "strategic_focus": "Build and scale the connected care platform \u2014 EMR integration, virtual care app, and operational tools",
+      "leading_indicators": [
+        "App adoption rate",
+        "Virtual visit volume",
+        "System uptime",
+        "Feature release cadence"
+      ],
+      "goal_contribution": "Tech enables connected care that differentiates Petfolk \u2014 virtual care, seamless booking, data-driven decisions.",
+      "dependencies": [
+        "Clinical Operations",
+        "Growth & Expansion"
+      ]
+    },
+    {
+      "name": "People & Culture",
+      "head": "VP, People",
+      "headcount": 8,
+      "strategic_focus": "Attract, retain, and develop veterinary talent in a market with severe staffing shortages",
+      "leading_indicators": [
+        "Time to fill clinical roles",
+        "Vet tech retention rate",
+        "Employee engagement score",
+        "Training completion rate"
+      ],
+      "goal_contribution": "Directly drives <20% turnover target. In an industry with 30%+ turnover, retention is the competitive moat.",
+      "dependencies": [
+        "Clinical Operations",
+        "Finance"
+      ]
+    },
+    {
+      "name": "Marketing & Brand",
+      "head": "VP, Marketing",
+      "headcount": 10,
+      "strategic_focus": "Build local brand awareness, drive new patient acquisition, and communicate the Petfolk difference",
+      "leading_indicators": [
+        "New patient registrations per clinic",
+        "Cost per acquisition",
+        "Google review rating",
+        "Referral rate"
+      ],
+      "goal_contribution": "Fills the clinics \u2014 new patient volume drives revenue per clinic and validates expansion decisions.",
+      "dependencies": [
+        "Clinical Operations",
+        "Growth & Expansion",
+        "Technology"
+      ]
+    },
+    {
+      "name": "Finance",
+      "head": "Marcus Hill",
+      "headcount": 6,
+      "strategic_focus": "Manage cash flow, clinic-level P&L, expansion capital allocation, and investor reporting",
+      "leading_indicators": [
+        "Revenue per clinic",
+        "Clinic-level EBITDA",
+        "Cash runway",
+        "Unit economics per new opening"
+      ],
+      "goal_contribution": "Financial discipline determines how many clinics we can open and how fast \u2014 gates the expansion target.",
+      "dependencies": [
+        "Growth & Expansion",
+        "Clinical Operations"
+      ]
+    }
+  ],
+  "employees": [
+    {
+      "name": "Dr. Audrey Wystrach",
+      "role": "Co-CEO & Founder",
+      "role_level": "c-suite",
+      "department": "Clinical Operations",
+      "reports_to": "",
+      "role_purpose": "Set clinical vision, maintain care standards, and practice vet medicine alongside the team",
+      "key_responsibilities": [
+        "Define clinical care standards",
+        "Practice as associate vet in clinics",
+        "Lead clinical team culture",
+        "Maintain NPS as org scales"
+      ],
+      "recent_activities": [
+        {
+          "action": "Completed 6 patient appointments at SouthPark clinic",
+          "detail": "Wellness exams, dental consult, and 2 urgent care visits \u2014 all Fear Free protocols followed",
+          "source": "EMR",
+          "what_it_enabled": "Maintained clinic NPS at 94 while modeling hands-on leadership that reinforces clinical culture across all locations",
+          "date": "2026-03-02T15:55"
+        },
+        {
+          "action": "Approved updated Fear Free certification requirements",
+          "detail": "Raised the bar on sedation-free handling protocols for all new hires",
+          "source": "Google Docs",
+          "what_it_enabled": "Every new clinic opening now launches with higher care standards \u2014 directly protects the 90+ NPS target as we scale to 40 locations",
+          "date": "2026-03-01T15:55"
+        },
+        {
+          "action": "Led clinical standards review with Partner Vets",
+          "detail": "Monthly call reviewing clinical outcomes, NPS trends, and protocol adherence across 19 clinics",
+          "source": "Zoom",
+          "what_it_enabled": "Identified 2 clinics trending below 85 NPS \u2014 intervention plan in place before it impacts patient volume",
+          "date": "2026-02-22T18:55"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 78,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Connected Care for the team and reinforces it in 1:1s and retros",
+          "Creates team norms that reflect Fear Free in practice"
+        ],
+        "areas_to_watch": [
+          "Tendency to take on too much \u2014 could delegate more to grow team capacity"
+        ]
+      },
+      "cross_functional_connections": [
+        "People & Culture",
+        "Marketing & Brand"
+      ],
+      "network_position": {
+        "influence_description": "Executive shaping company strategy and culture",
+        "direct_reports": [
+          "Dr. Michelle Diener"
+        ],
+        "key_collaborators": [
+          "Nina Chen",
+          "Taylor Simmons"
+        ]
+      }
+    },
+    {
+      "name": "Michael Wystrach",
+      "role": "Co-CEO",
+      "role_level": "c-suite",
+      "department": "Growth & Expansion",
+      "reports_to": "",
+      "role_purpose": "Drive business growth, expansion strategy, and operational scaling across all markets",
+      "key_responsibilities": [
+        "Lead market expansion",
+        "Manage investor relationships",
+        "Oversee unit economics",
+        "Build strategic partnerships"
+      ],
+      "recent_activities": [
+        {
+          "action": "Signed lease for Miami clinic #1",
+          "detail": "Coral Gables location \u2014 3,200 sq ft, projected 60 patients/day at maturity",
+          "source": "DocuSign",
+          "what_it_enabled": "Miami is market #8 \u2014 puts us at 22 clinics and on track for the 40-clinic target by end of 2026",
+          "date": "2026-03-02T15:55"
+        },
+        {
+          "action": "Presented Q4 results to Deerfield board",
+          "detail": "Revenue growth, unit economics per clinic, and expansion timeline update",
+          "source": "Google Slides",
+          "what_it_enabled": "Board approved accelerated Phoenix timeline \u2014 now opening Q2 instead of Q3, adding 3 more clinics to 2026 target",
+          "date": "2026-03-01T17:55"
+        },
+        {
+          "action": "Reviewed PetfolkFlex staffing economics",
+          "detail": "Analyzed relief vet utilization vs agency costs across all markets",
+          "source": "Slack",
+          "what_it_enabled": "PetfolkFlex is saving $14K/month vs agency staffing \u2014 funds that redirect toward new clinic buildouts",
+          "date": "2026-02-26T18:55"
+        }
+      ],
+      "leading_indicators": {
+        "mqls_generated": {
+          "current": 329,
+          "target": 350,
+          "trend": "\u2191 growing",
+          "unit": "/month"
+        },
+        "content_engagement": {
+          "current": 4.0,
+          "target": 5,
+          "trend": "\u2192 steady",
+          "unit": "% CTR"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Creates team norms that reflect Winning as a Team in practice",
+          "Creates team norms that reflect Connected Care in practice"
+        ],
+        "areas_to_watch": [
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "Technology",
+        "Finance"
+      ],
+      "network_position": {
+        "influence_description": "Executive shaping company strategy and culture",
+        "direct_reports": [
+          "Oren Benvenisti",
+          "Derek Liu",
+          "Marcus Hill"
+        ],
+        "key_collaborators": [
+          "Dr. Audrey Wystrach",
+          "Priya Nair"
+        ]
+      }
+    },
+    {
+      "name": "Dr. Michelle Diener",
+      "role": "Partner Veterinarian \u2014 Wake Forest",
+      "role_level": "manager",
+      "department": "Clinical Operations",
+      "reports_to": "Dr. Audrey Wystrach",
+      "role_purpose": "Lead clinical operations at Wake Forest while mentoring next-gen veterinary professionals",
+      "key_responsibilities": [
+        "Deliver Fear Free clinical care",
+        "Mentor through PetfolkPack program",
+        "Maintain clinic NPS above 90",
+        "Manage patient flow and scheduling"
+      ],
+      "recent_activities": [
+        {
+          "action": "Completed 14 patient visits \u2014 3 complex cases referred from virtual care",
+          "detail": "Virtual-to-clinic handoff worked seamlessly for a diabetic management case, a dental emergency, and a post-op recheck",
+          "source": "EMR",
+          "what_it_enabled": "Connected care model working \u2014 virtual triage \u2192 in-clinic treatment \u2192 follow-up. This is the patient journey that drives 90+ NPS",
+          "date": "2026-03-02T17:55"
+        },
+        {
+          "action": "Mentored 2 vet techs through PetfolkPack session",
+          "detail": "Focused on Fear Free blood draw techniques and client communication",
+          "source": "Google Calendar",
+          "what_it_enabled": "Both techs now handling blood draws independently with Fear Free compliance \u2014 reduces appointment time and improves patient experience",
+          "date": "2026-03-01T17:55"
+        },
+        {
+          "action": "Submitted monthly clinic performance report",
+          "detail": "Wake Forest NPS: 93, patient volume up 12% MoM, zero clinical incidents",
+          "source": "Google Sheets",
+          "what_it_enabled": "Wake Forest is now the model clinic for new market openings \u2014 Derek is using our protocols for the Miami buildout",
+          "date": "2026-02-22T09:55"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 65,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Creates team norms that reflect Connected Care in practice",
+          "Models Empathy First for the team and reinforces it in 1:1s and retros"
+        ],
+        "areas_to_watch": [
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "Growth & Expansion",
+        "Technology"
+      ],
+      "network_position": {
+        "influence_description": "Team leader shaping department output and developing people",
+        "direct_reports": [
+          "Jordan Reeves",
+          "Sasha Morales"
+        ],
+        "key_collaborators": [
+          "Oren Benvenisti",
+          "Chris Hadley"
+        ]
+      }
+    },
+    {
+      "name": "Jordan Reeves",
+      "role": "Veterinary Technician \u2014 SouthPark",
+      "role_level": "ic",
+      "department": "Clinical Operations",
+      "reports_to": "Dr. Michelle Diener",
+      "role_purpose": "Deliver hands-on patient care and create exceptional experiences for pets and parents",
+      "key_responsibilities": [
+        "Support wellness and sick patient care",
+        "Assist with surgical and dental procedures",
+        "Partner with pet parents on care plans",
+        "Maintain Fear Free protocols"
+      ],
+      "recent_activities": [
+        {
+          "action": "Assisted with 8 procedures including 2 dental cleanings",
+          "detail": "Maintained Fear Free protocols throughout \u2014 zero stress escalations",
+          "source": "EMR",
+          "what_it_enabled": "Dental revenue up 18% at SouthPark this month. Every dental cleaning is a $400-600 visit that also catches health issues early \u2014 this is preventive care that keeps NPS high",
+          "date": "2026-03-02T20:55"
+        },
+        {
+          "action": "Completed Fear Free Level 2 certification",
+          "detail": "Advanced sedation-free handling and low-stress patient positioning",
+          "source": "Training Portal",
+          "what_it_enabled": "Jordan is now one of 3 Level 2 certified techs in Charlotte \u2014 this capability means SouthPark can handle more anxious patients without referral, keeping revenue in-house",
+          "date": "2026-03-01T13:55"
+        },
+        {
+          "action": "Called 6 post-surgical pet parents for follow-up",
+          "detail": "All patients recovering well \u2014 one flagged for early recheck based on owner concerns",
+          "source": "EMR",
+          "what_it_enabled": "Proactive follow-up is why SouthPark has zero negative Google reviews this quarter \u2014 directly protects clinic NPS and referral rate",
+          "date": "2026-02-22T16:55"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 62,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "steady",
+        "direction": "Consistent contribution \u2014 maintaining velocity on key deliverables",
+        "pattern": "Reliable output maintaining team velocity"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Consistently demonstrates Empathy First in daily work and team interactions",
+          "Embodies Fear Free \u2014 visible in how they approach problems and collaborate"
+        ],
+        "areas_to_watch": [
+          "Deep focus on delivery \u2014 opportunity to step back and share strategic perspective",
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "Growth & Expansion",
+        "Technology"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Priya Nair",
+          "Marcus Hill"
+        ]
+      }
+    },
+    {
+      "name": "Sasha Morales",
+      "role": "Veterinary Assistant \u2014 Huntersville",
+      "role_level": "ic",
+      "department": "Clinical Operations",
+      "reports_to": "Dr. Michelle Diener",
+      "role_purpose": "Support the clinical team in delivering compassionate, efficient care",
+      "key_responsibilities": [
+        "Assist with exams and venipuncture",
+        "Prepare patients for procedures",
+        "Communicate with pet parents",
+        "Maintain exam room readiness"
+      ],
+      "recent_activities": [
+        {
+          "action": "Prepped 12 exam rooms between appointments",
+          "detail": "Maintained under 5-minute room turnover all day \u2014 zero patient wait-time complaints",
+          "source": "EMR",
+          "what_it_enabled": "Fast room turnover means SouthPark saw 3 additional same-day appointments today \u2014 that's roughly $1,200 in revenue that would have been turned away",
+          "date": "2026-03-02T19:55"
+        },
+        {
+          "action": "Assisted Dr. Diener with emergency laceration repair",
+          "detail": "Patient stabilized, parent calmed, Fear Free protocols maintained under pressure",
+          "source": "EMR",
+          "what_it_enabled": "Emergency handled in-house instead of referring out \u2014 kept the revenue and the parent's trust. Parent left a 5-star Google review within an hour",
+          "date": "2026-03-01T17:55"
+        },
+        {
+          "action": "Completed inventory check and restocking for Huntersville",
+          "detail": "Flagged low supply of sedation alternatives and dental consumables",
+          "source": "Slack",
+          "what_it_enabled": "Prevented a stockout that would have forced procedure cancellations next week \u2014 protecting $2,400+ in scheduled dental revenue",
+          "date": "2026-02-26T13:55"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 65,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "steady",
+        "direction": "Consistent contribution \u2014 maintaining velocity on key deliverables",
+        "pattern": "Reliable output maintaining team velocity"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Embodies Fear Free \u2014 visible in how they approach problems and collaborate",
+          "Consistently demonstrates Connected Care in daily work and team interactions"
+        ],
+        "areas_to_watch": [
+          "Could expand cross-team visibility \u2014 impact stays local",
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "People & Culture",
+        "Technology"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Chris Hadley",
+          "Nina Chen"
+        ]
+      }
+    },
+    {
+      "name": "Oren Benvenisti",
+      "role": "CTO",
+      "role_level": "c-suite",
+      "department": "Technology",
+      "reports_to": "Michael Wystrach",
+      "role_purpose": "Build the technology platform powering connected care",
+      "key_responsibilities": [
+        "Lead product and engineering",
+        "Scale virtual care platform",
+        "Integrate EMR systems",
+        "Drive data-driven clinical insights"
+      ],
+      "recent_activities": [
+        {
+          "action": "Shipped v2.3 of the Petfolk app",
+          "detail": "Multi-pet household booking, virtual care queue improvements, and push notification reliability fix",
+          "source": "GitHub",
+          "what_it_enabled": "Multi-pet booking was the #1 requested feature \u2014 34% of Petfolk households have 2+ pets. This removes the friction that was costing us repeat bookings",
+          "date": "2026-03-02T18:55"
+        },
+        {
+          "action": "Reviewed EMR integration architecture for new markets",
+          "detail": "Standardized the clinic tech stack so new openings deploy in days not weeks",
+          "source": "Jira",
+          "what_it_enabled": "Miami and Phoenix clinics will go live with full tech stack on day 1 \u2014 no more 2-week ramp that slowed Atlanta and Dallas launches",
+          "date": "2026-03-01T16:55"
+        },
+        {
+          "action": "Led sprint planning with virtual care and booking teams",
+          "detail": "Prioritized 24/7 virtual care for app launch and insurance integration exploration",
+          "source": "Jira",
+          "what_it_enabled": "Virtual care feature on track for all-market launch by Q2 \u2014 this is the 'connected care' differentiator that investors specifically funded in Series C",
+          "date": "2026-02-26T13:55"
+        }
+      ],
+      "leading_indicators": {
+        "sprint_velocity": {
+          "current": 18,
+          "target": 30,
+          "trend": "\u2192 steady",
+          "unit": "pts/sprint"
+        },
+        "code_review_turnaround": {
+          "current": 5.7,
+          "target": 4,
+          "trend": "\u2191 improving",
+          "unit": "hours"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Empathy First for the team and reinforces it in 1:1s and retros",
+          "Creates team norms that reflect Winning as a Team in practice"
+        ],
+        "areas_to_watch": [
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "Finance",
+        "Growth & Expansion"
+      ],
+      "network_position": {
+        "influence_description": "Executive shaping company strategy and culture",
+        "direct_reports": [
+          "Priya Nair",
+          "Taylor Simmons"
+        ],
+        "key_collaborators": [
+          "Nina Chen",
+          "Dr. Michelle Diener"
+        ]
+      }
+    },
+    {
+      "name": "Priya Nair",
+      "role": "Senior Software Engineer",
+      "role_level": "ic",
+      "department": "Technology",
+      "reports_to": "Oren Benvenisti",
+      "role_purpose": "Build and maintain the connected care platform",
+      "key_responsibilities": [
+        "Develop booking and virtual care features",
+        "Maintain system reliability",
+        "Integrate veterinary systems",
+        "Ship features on sprint cadence"
+      ],
+      "recent_activities": [
+        {
+          "action": "Merged PR #847: Booking flow redesign for multi-pet households",
+          "detail": "3-week sprint \u2014 new UI lets parents book for multiple pets in one flow with shared appointment times",
+          "source": "GitHub",
+          "what_it_enabled": "Removes the #1 friction point for multi-pet families. 34% of our households have 2+ pets \u2014 this directly increases booking completion rate and revenue per visit",
+          "date": "2026-03-02T18:55"
+        },
+        {
+          "action": "Fixed critical bug in virtual care queue",
+          "detail": "Queue was silently dropping connections after 8 minutes \u2014 affected ~15 virtual visits/day",
+          "source": "GitHub",
+          "what_it_enabled": "15 virtual visits/day were getting dropped \u2014 that's ~$750/day in lost revenue and frustrated parents who might not come back. Fixed = retained",
+          "date": "2026-03-01T12:55"
+        },
+        {
+          "action": "Deployed monitoring dashboard for clinic system uptime",
+          "detail": "Real-time alerts for EMR, booking, and payment systems across all 19 clinics",
+          "source": "Jira",
+          "what_it_enabled": "Last month Orlando had 4 hours of booking downtime we didn't catch for 2 hours. This dashboard means zero undetected outages \u2014 protecting patient volume at every clinic",
+          "date": "2026-02-24T17:55"
+        }
+      ],
+      "leading_indicators": {
+        "sprint_velocity": {
+          "current": 32,
+          "target": 30,
+          "trend": "\u2192 steady",
+          "unit": "pts/sprint"
+        },
+        "code_review_turnaround": {
+          "current": 7.4,
+          "target": 4,
+          "trend": "\u2193 slowing",
+          "unit": "hours"
+        }
+      },
+      "momentum": {
+        "velocity": "steady",
+        "direction": "Consistent contribution \u2014 maintaining velocity on key deliverables",
+        "pattern": "Reliable output maintaining team velocity"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Consistently demonstrates Fear Free in daily work and team interactions",
+          "Consistently demonstrates Connected Care in daily work and team interactions"
+        ],
+        "areas_to_watch": [
+          "Could expand cross-team visibility \u2014 impact stays local",
+          "Tendency to take on too much \u2014 could delegate more to grow team capacity"
+        ]
+      },
+      "cross_functional_connections": [
+        "People & Culture",
+        "Finance"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Sasha Morales",
+          "Nina Chen"
+        ]
+      }
+    },
+    {
+      "name": "Derek Liu",
+      "role": "Director of New Market Openings",
+      "role_level": "director",
+      "department": "Growth & Expansion",
+      "reports_to": "Michael Wystrach",
+      "role_purpose": "Execute new clinic openings on time and on budget",
+      "key_responsibilities": [
+        "Manage clinic buildout timelines",
+        "Coordinate real estate and construction",
+        "Hire opening-day teams",
+        "Hit 90-day patient volume targets"
+      ],
+      "recent_activities": [
+        {
+          "action": "Completed site walkthrough for Phoenix clinic #1",
+          "detail": "Scottsdale location \u2014 lease terms negotiated, buildout timeline: 14 weeks",
+          "source": "Google Docs",
+          "what_it_enabled": "Phoenix opening now locked for Q2 \u2014 this is market #9 and clinic #24, putting us 60% toward the 40-clinic goal",
+          "date": "2026-03-02T20:55"
+        },
+        {
+          "action": "Hired opening-day clinical team for Miami",
+          "detail": "Partner Vet, 2 vet techs, and 2 vet assistants signed \u2014 all Fear Free certified or enrolled",
+          "source": "Workable",
+          "what_it_enabled": "Miami clinic #1 is now fully staffed 6 weeks before opening \u2014 means we can do soft launch and hit 90-day patient targets faster than Atlanta did",
+          "date": "2026-03-01T14:55"
+        },
+        {
+          "action": "Created standardized new-market launch playbook",
+          "detail": "Documented the Charlotte \u2192 Raleigh \u2192 Atlanta learnings into a repeatable 16-week timeline",
+          "source": "Google Docs",
+          "what_it_enabled": "Every future market opening follows the same playbook \u2014 reduces time-to-open by 3 weeks and cuts launch costs by ~$40K per clinic",
+          "date": "2026-02-24T11:55"
+        }
+      ],
+      "leading_indicators": {
+        "mqls_generated": {
+          "current": 304,
+          "target": 350,
+          "trend": "\u2191 growing",
+          "unit": "/month"
+        },
+        "content_engagement": {
+          "current": 2.8,
+          "target": 5,
+          "trend": "\u2192 steady",
+          "unit": "% CTR"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Fear Free for the team and reinforces it in 1:1s and retros",
+          "Models Winning as a Team for the team and reinforces it in 1:1s and retros"
+        ],
+        "areas_to_watch": [
+          "Could expand cross-team visibility \u2014 impact stays local",
+          "Tendency to take on too much \u2014 could delegate more to grow team capacity"
+        ]
+      },
+      "cross_functional_connections": [
+        "Finance",
+        "Marketing & Brand"
+      ],
+      "network_position": {
+        "influence_description": "Cross-functional leader connecting department strategy to company goals",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Oren Benvenisti",
+          "Chris Hadley"
+        ]
+      }
+    },
+    {
+      "name": "Nina Chen",
+      "role": "People & Culture Manager",
+      "role_level": "manager",
+      "department": "People & Culture",
+      "reports_to": "VP, People",
+      "role_purpose": "Build hiring and retention programs that make Petfolk the best place for vet professionals",
+      "key_responsibilities": [
+        "Lead clinical recruiting pipeline",
+        "Run onboarding and Fear Free certification",
+        "Track retention and flight risks",
+        "Support manager development"
+      ],
+      "recent_activities": [
+        {
+          "action": "Filled 4 vet tech positions across Charlotte and Raleigh",
+          "detail": "Average time-to-fill: 18 days (down from 26 days last quarter)",
+          "source": "Workable",
+          "what_it_enabled": "Faster hiring means clinics stay fully staffed \u2014 every unfilled vet tech role costs ~$800/week in lost appointment capacity. 4 hires = $3,200/week recovered",
+          "date": "2026-03-02T18:55"
+        },
+        {
+          "action": "Launched PetfolkPack mentorship cohort 3",
+          "detail": "8 new vet techs and assistants paired with experienced mentors across 6 clinics",
+          "source": "Google Calendar",
+          "what_it_enabled": "Cohort 1 had 95% retention at 6 months vs 70% for non-mentored hires. This program is the single biggest lever for hitting the <20% turnover target",
+          "date": "2026-03-01T18:55"
+        },
+        {
+          "action": "Ran monthly retention risk analysis",
+          "detail": "Flagged 2 vet techs in Orlando showing early turnover signals \u2014 low engagement scores, schedule complaints",
+          "source": "HRIS",
+          "what_it_enabled": "Early intervention on 2 at-risk employees before they leave. Replacing a vet tech costs $8-12K \u2014 this analysis protects $24K and keeps Orlando fully staffed during high season",
+          "date": "2026-02-26T19:55"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 93,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Winning as a Team for the team and reinforces it in 1:1s and retros",
+          "Creates team norms that reflect Connected Care in practice"
+        ],
+        "areas_to_watch": [
+          "Could expand cross-team visibility \u2014 impact stays local",
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "Technology",
+        "Growth & Expansion"
+      ],
+      "network_position": {
+        "influence_description": "Team leader shaping department output and developing people",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Michael Wystrach",
+          "Chris Hadley"
+        ]
+      }
+    },
+    {
+      "name": "Chris Hadley",
+      "role": "Marketing Manager",
+      "role_level": "manager",
+      "department": "Marketing & Brand",
+      "reports_to": "VP, Marketing",
+      "role_purpose": "Drive new patient acquisition and local brand presence",
+      "key_responsibilities": [
+        "Run local marketing campaigns",
+        "Manage Google and social presence",
+        "Track cost per acquisition by clinic",
+        "Coordinate grand opening marketing"
+      ],
+      "recent_activities": [
+        {
+          "action": "Launched Miami pre-opening campaign",
+          "detail": "Targeted Facebook and Instagram ads in Coral Gables \u2014 'Your New Vet is Coming' creative",
+          "source": "Meta Ads",
+          "what_it_enabled": "890 pre-registrations in first 2 weeks \u2014 Miami is on pace to beat Atlanta's pre-opening numbers by 40%, setting up a strong first 90 days",
+          "date": "2026-03-02T18:55"
+        },
+        {
+          "action": "Responded to 12 Google reviews across 5 clinics",
+          "detail": "All 5-star reviews thanked, 2 negative reviews addressed with service recovery offers",
+          "source": "Google Business",
+          "what_it_enabled": "Charlotte SouthPark now at 4.9 stars with 280+ reviews \u2014 this is the #1 driver of organic new patient acquisition in established markets",
+          "date": "2026-03-01T13:55"
+        },
+        {
+          "action": "Published monthly marketing performance report",
+          "detail": "Cost per new patient acquisition: $42 (down from $58 last quarter). Referral rate: 34%",
+          "source": "Google Analytics",
+          "what_it_enabled": "Lower acquisition cost means each new clinic reaches profitability faster \u2014 directly improves the unit economics that determine how many more clinics we can open",
+          "date": "2026-02-22T20:55"
+        }
+      ],
+      "leading_indicators": {
+        "mqls_generated": {
+          "current": 300,
+          "target": 350,
+          "trend": "\u2191 growing",
+          "unit": "/month"
+        },
+        "content_engagement": {
+          "current": 7.4,
+          "target": 5,
+          "trend": "\u2192 steady",
+          "unit": "% CTR"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Models Empathy First for the team and reinforces it in 1:1s and retros",
+          "Models Winning as a Team for the team and reinforces it in 1:1s and retros"
+        ],
+        "areas_to_watch": [
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "Technology",
+        "Growth & Expansion"
+      ],
+      "network_position": {
+        "influence_description": "Team leader shaping department output and developing people",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Derek Liu",
+          "Jordan Reeves"
+        ]
+      }
+    },
+    {
+      "name": "Taylor Simmons",
+      "role": "Remote Veterinary Support Specialist",
+      "role_level": "ic",
+      "department": "Technology",
+      "reports_to": "Oren Benvenisti",
+      "role_purpose": "Deliver 24/7 virtual care \u2014 the first line of connected care for pet parents",
+      "key_responsibilities": [
+        "Handle virtual consultations",
+        "Triage urgent cases to clinics",
+        "Document visits in EMR",
+        "Maintain virtual care satisfaction scores"
+      ],
+      "recent_activities": [
+        {
+          "action": "Handled 22 virtual care consultations today",
+          "detail": "14 wellness questions, 5 medication refill requests, 3 urgent triages (1 sent to clinic)",
+          "source": "Petfolk App",
+          "what_it_enabled": "3 urgent triages converted to in-clinic visits \u2014 that's ~$900 in same-day revenue that would have gone to an emergency vet. Virtual care is now a patient acquisition channel",
+          "date": "2026-03-02T15:55"
+        },
+        {
+          "action": "Flagged recurring pattern in after-hours calls",
+          "detail": "40% of 9-11pm calls are new puppy anxiety \u2014 could be addressed with automated content",
+          "source": "Slack",
+          "what_it_enabled": "If we automate puppy FAQ responses, we free up ~2 hours of virtual vet time per night \u2014 capacity for 6 more paid consultations",
+          "date": "2026-03-01T15:55"
+        },
+        {
+          "action": "Achieved 96% satisfaction score on virtual visits this week",
+          "detail": "38 of 40 surveyed parents rated experience 5/5",
+          "source": "Petfolk App",
+          "what_it_enabled": "Virtual care satisfaction directly drives app retention \u2014 parents who use virtual care book 2.3x more in-clinic visits. This is the connected care flywheel working",
+          "date": "2026-02-26T19:55"
+        }
+      ],
+      "leading_indicators": {
+        "sprint_velocity": {
+          "current": 19,
+          "target": 30,
+          "trend": "\u2192 steady",
+          "unit": "pts/sprint"
+        },
+        "code_review_turnaround": {
+          "current": 7.8,
+          "target": 4,
+          "trend": "\u2191 improving",
+          "unit": "hours"
+        }
+      },
+      "momentum": {
+        "velocity": "accelerating",
+        "direction": "Strong forward momentum \u2014 work is compounding across teams",
+        "pattern": "Consistent high-impact delivery with increasing cross-functional reach"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Consistently demonstrates Winning as a Team in daily work and team interactions",
+          "Embodies Empathy First \u2014 visible in how they approach problems and collaborate"
+        ],
+        "areas_to_watch": [
+          "Deep focus on delivery \u2014 opportunity to step back and share strategic perspective",
+          "Strong 1:1 collaboration but less visible in group settings"
+        ]
+      },
+      "cross_functional_connections": [
+        "Clinical Operations",
+        "Marketing & Brand"
+      ],
+      "network_position": {
+        "influence_description": "Individual contributor with growing cross-team influence",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Sasha Morales",
+          "Marcus Hill"
+        ]
+      }
+    },
+    {
+      "name": "Marcus Hill",
+      "role": "CFO",
+      "role_level": "c-suite",
+      "department": "Finance",
+      "reports_to": "Michael Wystrach",
+      "role_purpose": "Manage financial health through rapid expansion",
+      "key_responsibilities": [
+        "Oversee clinic-level P&L",
+        "Manage Series C capital deployment",
+        "Deliver board reporting",
+        "Model unit economics for new markets"
+      ],
+      "recent_activities": [
+        {
+          "action": "Delivered January clinic-level P&L to leadership",
+          "detail": "14 of 19 clinics EBITDA-positive. Charlotte SouthPark and Raleigh Wake Forest leading at 22% margins",
+          "source": "NetSuite",
+          "what_it_enabled": "Board can now see which clinic model (size, market, staffing) produces best unit economics \u2014 directly informs how we deploy remaining Series C capital for maximum clinic count",
+          "date": "2026-03-02T20:55"
+        },
+        {
+          "action": "Modeled unit economics for Kansas City entry",
+          "detail": "Projected breakeven at month 8 based on Dallas and Houston comparable data",
+          "source": "Google Sheets",
+          "what_it_enabled": "Kansas City approved as market #10 \u2014 8-month breakeven is within our capital allocation model and keeps us on track for 40 clinics",
+          "date": "2026-03-01T17:55"
+        },
+        {
+          "action": "Filed Q4 investor update with Deerfield",
+          "detail": "Revenue, burn rate, clinic performance, and expansion timeline \u2014 all metrics on or ahead of plan",
+          "source": "Google Docs",
+          "what_it_enabled": "Strong investor relationship keeps future funding options open \u2014 we may not need Series D if unit economics continue improving at this rate",
+          "date": "2026-02-26T20:55"
+        }
+      ],
+      "leading_indicators": {
+        "throughput": {
+          "current": 71,
+          "target": 85,
+          "trend": "\u2192 steady",
+          "unit": "%"
+        }
+      },
+      "momentum": {
+        "velocity": "building",
+        "direction": "Momentum is building \u2014 recent contributions creating ripple effects",
+        "pattern": "Steady delivery cadence with growing network connections"
+      },
+      "behavior_patterns": {
+        "values_aligned": [
+          "Creates team norms that reflect Fear Free in practice",
+          "Models Always Getting Better for the team and reinforces it in 1:1s and retros"
+        ],
+        "areas_to_watch": [
+          "Documentation could help scale knowledge beyond immediate team"
+        ]
+      },
+      "cross_functional_connections": [
+        "Growth & Expansion",
+        "Clinical Operations"
+      ],
+      "network_position": {
+        "influence_description": "Executive shaping company strategy and culture",
+        "direct_reports": [],
+        "key_collaborators": [
+          "Taylor Simmons",
+          "Michael Wystrach"
+        ]
+      }
+    }
+  ],
+  "current_quarter": "Q1 2026",
+  "last_updated": "2026-03-02"
+}
