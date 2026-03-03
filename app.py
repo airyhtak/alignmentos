@@ -17,7 +17,7 @@ st.set_page_config(
     page_title="AlignmentOS",
     page_icon="◉",
     layout="wide",
-    initial_sidebar_state="collapsed",
+    initial_sidebar_state="expanded",
 )
 
 # Source icon map
@@ -81,7 +81,7 @@ st.markdown("""
 }
 html, body, [class*="css"] { font-family: var(--sans); }
 .block-container { max-width: 1160px; padding: 1.5rem 2rem 3rem; }
-#MainMenu, footer, header { visibility: hidden; }
+#MainMenu, footer { visibility: hidden; }
 
 /* ── top bar ── */
 .top-bar {
