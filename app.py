@@ -1,9 +1,10 @@
 # app.py - AlignmentOS Prototype
-# Dashboard layout — cards, panels, enablement stories hero, product feel
+# Live feed — tool-sourced activities, enablement narratives, org pulse
 
 import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
+from datetime import datetime
 
 from data_loader import (
     get_available_companies, load_company, get_employee_by_name,
@@ -19,9 +20,41 @@ st.set_page_config(
     initial_sidebar_state="collapsed",
 )
 
-# ══════════════════════════════════════════════════
+# Source icon map
+SOURCE_ICONS = {
+    "jira": "🔷", "github": "⚫", "salesforce": "☁️", "slack": "💬",
+    "google docs": "📄", "google sheets": "📊", "google slides": "📑",
+    "google calendar": "📅", "google analytics": "📈", "google business": "⭐",
+    "emr": "🏥", "zoom": "📹", "docusign": "✍️", "workable": "👤",
+    "hris": "🗂️", "training portal": "🎓", "meta ads": "📢",
+    "petfolk app": "🐾", "netsuite": "💰", "confluence": "📝",
+}
+
+def _get_source_icon(source):
+    return SOURCE_ICONS.get(source.lower(), "📡")
+
+def _time_ago(date_str):
+    """Convert ISO date to relative time."""
+    try:
+        dt = datetime.fromisoformat(date_str)
+        diff = datetime.now() - dt
+        hours = diff.total_seconds() / 3600
+        if hours < 1:
+            return "just now", True
+        elif hours < 24:
+            return f"{int(hours)}h ago", True
+        elif hours < 48:
+            return "yesterday", False
+        else:
+            days = int(hours / 24)
+            return f"{days}d ago", False
+    except:
+        return date_str, False
+
+
+# ══════════════════════════════════════════════════════════
 # DESIGN SYSTEM
-# ══════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════
 
 st.markdown("""
 <style>
@@ -65,9 +98,7 @@ html, body, [class*="css"] { font-family: var(--sans); }
 }
 .tb-name  { font-size:.95rem; font-weight:600; color:var(--text); letter-spacing:-.02em; }
 .tb-meta  { font-size:.72rem; color:var(--text-3); }
-.tb-person {
-    text-align:right; font-size:.82rem; color:var(--text-2);
-}
+.tb-person { text-align:right; font-size:.82rem; color:var(--text-2); }
 .tb-person strong { color:var(--text); }
 
 /* ── momentum pill ── */
@@ -91,22 +122,63 @@ html, body, [class*="css"] { font-family: var(--sans); }
     letter-spacing:.09em; color:var(--text-3); margin-bottom:10px;
 }
 
-/* ── story cards (hero) ── */
-.story {
+/* ── live feed ── */
+.feed-item {
     background: var(--surface); border:1px solid var(--border);
-    border-radius: var(--radius); padding:16px 20px; margin-bottom:8px;
+    border-radius: var(--radius); padding:16px 20px; margin-bottom:10px;
     transition: border-color .15s, background .15s;
+    border-left: 3px solid transparent;
 }
-.story:hover { border-color: var(--border-hi); background: var(--accent-bg); }
-.story-top { display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:3px; }
-.story-action  { font-size:.92rem; font-weight:600; color:var(--text); }
-.story-date    { font-size:.68rem; color:var(--text-3); font-family:var(--mono); white-space:nowrap; margin-left:12px; }
-.story-detail  { font-size:.82rem; color:var(--text-2); line-height:1.45; margin-bottom:8px; }
-.story-enabled {
+.feed-item:hover { border-color: var(--border-hi); background: var(--accent-bg); }
+.feed-item.feed-recent { border-left-color: var(--green); }
+.feed-header {
+    display:flex; justify-content:space-between; align-items:center; margin-bottom:8px;
+}
+.feed-source {
+    display:inline-flex; align-items:center; gap:6px;
+    font-size:.68rem; font-weight:600; text-transform:uppercase;
+    letter-spacing:.06em; color:var(--text-3);
+    padding:3px 10px; border-radius:12px;
+    background: rgba(255,255,255,0.04); border:1px solid var(--border);
+}
+.feed-time {
+    font-size:.68rem; color:var(--text-3); font-family:var(--mono);
+    display:flex; align-items:center; gap:4px;
+}
+.feed-pulse {
+    width:6px; height:6px; border-radius:50%; background:var(--green);
+    display:inline-block;
+}
+.feed-pulse.stale { background:var(--text-3); }
+.feed-action { font-size:.92rem; font-weight:600; color:var(--text); margin-bottom:6px; line-height:1.4; }
+.feed-detail { font-size:.82rem; color:var(--text-2); line-height:1.45; margin-bottom:10px; }
+.feed-enabled {
     font-size:.82rem; color:var(--accent); line-height:1.45;
-    padding:8px 12px; background:var(--accent-bg);
+    padding:10px 14px; background:var(--accent-bg);
     border-radius:8px; border-left:2px solid #6366f1;
 }
+.feed-enabled-label {
+    font-size:.6rem; font-weight:600; text-transform:uppercase;
+    letter-spacing:.08em; color:rgba(129,140,248,0.6); margin-bottom:4px;
+}
+.feed-goal-tag {
+    display:inline-block; font-size:.62rem; font-weight:500;
+    padding:2px 8px; border-radius:10px; margin-top:8px;
+    background:var(--green-bg); color:var(--green); border:1px solid rgba(16,185,129,.15);
+}
+
+/* ── org pulse feed ── */
+.org-item {
+    background: var(--surface); border:1px solid var(--border);
+    border-radius: var(--radius); padding:12px 16px; margin-bottom:6px;
+    transition: border-color .15s;
+}
+.org-item:hover { border-color: var(--border-hi); }
+.org-header { display:flex; justify-content:space-between; align-items:center; margin-bottom:4px; }
+.org-who { font-size:.82rem; font-weight:600; color:var(--text); }
+.org-dept { font-size:.62rem; color:var(--text-3); padding:2px 8px; border-radius:8px; background:rgba(255,255,255,0.03); }
+.org-action { font-size:.82rem; color:var(--text-2); margin-bottom:4px; }
+.org-enabled { font-size:.78rem; color:var(--accent); }
 
 /* ── indicator pills ── */
 .ind-grid { display:flex; gap:8px; flex-wrap:wrap; }
@@ -195,9 +267,9 @@ for key, default in [("chat_history", []), ("current_employee", None), ("company
         st.session_state[key] = default
 
 
-# ══════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════
 # COMPONENTS
-# ══════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════
 
 def _mom_class(velocity):
     return "mom-up" if any(w in velocity.lower() for w in ["accel", "strong", "upward"]) else "mom-mid"
@@ -222,36 +294,95 @@ def render_top_bar(company_data, employee):
     </div>""", unsafe_allow_html=True)
 
 
-def render_stories(employee):
+def render_live_feed(employee, company_data):
+    """Live activity feed with tool sources and enablement connections."""
     acts = employee.get("recent_activities", [])
     if not acts:
         return
-    st.markdown('<div class="sec">What Your Work Enabled</div>', unsafe_allow_html=True)
+    
+    st.markdown('<div class="sec">Live Feed — What Your Work Is Enabling</div>', unsafe_allow_html=True)
+    
+    # Find relevant goals for tagging
+    goals = company_data.get("company_goals", {}).get("annual_priorities", [])
+    goal_keywords = {}
+    for g in goals:
+        goal_text = g.get("goal", "").lower()
+        goal_keywords[g.get("goal", "")] = goal_text
 
-    # Top 2 prominent
-    for act in acts[:2]:
+    for i, act in enumerate(acts):
+        source = act.get("source", "")
+        icon = _get_source_icon(source)
+        time_str, is_recent = _time_ago(act.get("date", ""))
+        pulse_class = "" if is_recent else " stale"
+        recent_class = " feed-recent" if is_recent else ""
+        
+        # Try to match to a company goal
+        enabled_text = act.get("what_it_enabled", "").lower()
+        matched_goal = ""
+        for gname, gtext in goal_keywords.items():
+            # Simple keyword matching
+            gwords = [w for w in gtext.split() if len(w) > 3]
+            if any(w in enabled_text for w in gwords):
+                matched_goal = gname
+                break
+        
+        goal_tag = f'<div class="feed-goal-tag">↗ {matched_goal}</div>' if matched_goal else ""
+        
         st.markdown(f"""
-        <div class="story">
-            <div class="story-top">
-                <div class="story-action">{act.get('action','')}</div>
-                <div class="story-date">{act.get('date','')}</div>
+        <div class="feed-item{recent_class}">
+            <div class="feed-header">
+                <div class="feed-source">{icon} {source}</div>
+                <div class="feed-time"><span class="feed-pulse{pulse_class}"></span> {time_str}</div>
             </div>
-            <div class="story-detail">{act.get('detail','')}</div>
-            <div class="story-enabled">→ {act.get('what_it_enabled','')}</div>
+            <div class="feed-action">{act.get('action','')}</div>
+            <div class="feed-detail">{act.get('detail','')}</div>
+            <div class="feed-enabled">
+                <div class="feed-enabled-label">What this enabled</div>
+                {act.get('what_it_enabled','')}
+            </div>
+            {goal_tag}
         </div>""", unsafe_allow_html=True)
 
-    if len(acts) > 2:
-        with st.expander(f"{len(acts)-2} more enablement stories"):
-            for act in acts[2:]:
-                st.markdown(f"""
-                <div class="story">
-                    <div class="story-top">
-                        <div class="story-action">{act.get('action','')}</div>
-                        <div class="story-date">{act.get('date','')}</div>
-                    </div>
-                    <div class="story-detail">{act.get('detail','')}</div>
-                    <div class="story-enabled">→ {act.get('what_it_enabled','')}</div>
-                </div>""", unsafe_allow_html=True)
+
+def render_org_pulse(company_data, current_employee):
+    """Cross-company activity feed — what others are doing and enabling."""
+    all_activities = []
+    for emp in company_data.get("employees", []):
+        if emp["name"] == current_employee["name"]:
+            continue
+        for act in emp.get("recent_activities", [])[:1]:  # Top 1 per person
+            all_activities.append({
+                "name": emp["name"],
+                "department": emp.get("department", ""),
+                "source": act.get("source", ""),
+                "action": act.get("action", ""),
+                "enabled": act.get("what_it_enabled", ""),
+                "date": act.get("date", ""),
+            })
+    
+    # Sort by date (most recent first)
+    all_activities.sort(key=lambda x: x.get("date", ""), reverse=True)
+    
+    st.markdown('<div class="sec">Org Pulse — What the Company Is Enabling</div>', unsafe_allow_html=True)
+    
+    for item in all_activities[:8]:
+        icon = _get_source_icon(item["source"])
+        time_str, is_recent = _time_ago(item.get("date", ""))
+        
+        # Truncate enablement for feed
+        enabled = item["enabled"]
+        if len(enabled) > 120:
+            enabled = enabled[:120] + "…"
+        
+        st.markdown(f"""
+        <div class="org-item">
+            <div class="org-header">
+                <div class="org-who">{icon} {item['name']}</div>
+                <div class="org-dept">{item['department']}</div>
+            </div>
+            <div class="org-action">{item['action']}</div>
+            <div class="org-enabled">→ {enabled}</div>
+        </div>""", unsafe_allow_html=True)
 
 
 def render_indicators(employee):
@@ -280,7 +411,6 @@ def render_chain(company_data, employee):
     goals = company_data.get("company_goals", {})
     top = [g["goal"] for g in goals.get("annual_priorities", [])[:2]]
     
-    # Truncate helper
     def trunc(s, n=90):
         return s[:n] + "…" if len(s) > n else s
 
@@ -369,15 +499,18 @@ def render_network(employee, company_data):
     return fig
 
 
-# ══════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════
 # VIEWS
-# ══════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════
 
 def view_your_reality(company_data, employee):
-    """Dashboard — stories first, then indicators + network side by side, chain, patterns."""
+    """Live feed first, then connection chain, indicators + network, patterns."""
     
-    # ── Hero: enablement stories ──
-    render_stories(employee)
+    # ── Hero: Live activity feed ──
+    render_live_feed(employee, company_data)
+
+    # ── How your work connects ──
+    render_chain(company_data, employee)
 
     # ── Two columns: indicators left, network right ──
     col_l, col_r = st.columns([3, 2], gap="medium")
@@ -391,13 +524,30 @@ def view_your_reality(company_data, employee):
         if net.get("influence_description"):
             st.caption(net["influence_description"])
 
-    # ── Chain + Patterns ──
-    render_chain(company_data, employee)
+    # ── Patterns ──
     render_patterns(employee)
 
 
+def view_org_pulse(company_data, employee):
+    """Company-wide live feed — see what everyone is enabling."""
+    render_org_pulse(company_data, employee)
+    
+    # Company goals with progress context
+    goals = company_data.get("company_goals", {})
+    priorities = goals.get("annual_priorities", [])
+    if priorities:
+        st.markdown('<div class="sec">Company Goals</div>', unsafe_allow_html=True)
+        cols = st.columns(min(len(priorities), 4))
+        for i, g in enumerate(priorities):
+            with cols[i]:
+                st.markdown(f"""<div class="goal-card">
+                    <div class="goal-title">{g.get('goal','')}</div>
+                    <div class="goal-target">{g.get('target','')}</div>
+                </div>""", unsafe_allow_html=True)
+
+
 def view_collective(company_data):
-    """Company-wide momentum view."""
+    """Company-wide overview."""
 
     # Mission banner
     st.markdown(f"""
@@ -415,7 +565,7 @@ def view_collective(company_data):
     priorities = goals.get("annual_priorities", [])
     if priorities:
         st.markdown('<div class="sec">Company Goals</div>', unsafe_allow_html=True)
-        cols = st.columns(len(priorities))
+        cols = st.columns(min(len(priorities), 4))
         for i, g in enumerate(priorities):
             with cols[i]:
                 st.markdown(f"""<div class="goal-card">
@@ -476,9 +626,15 @@ def view_team(company_data, employee):
             st.markdown(f'<span class="mom-pill {mc}">● {vel}</span>', unsafe_allow_html=True)
             st.markdown(f"*{mom.get('direction','')}*")
             for act in rpt.get("recent_activities",[])[:2]:
-                st.markdown(f"""<div class="story">
-                    <div class="story-action">{act.get('action','')}</div>
-                    <div class="story-enabled">→ {act.get('what_it_enabled','')}</div>
+                source = act.get("source", "")
+                icon = _get_source_icon(source)
+                st.markdown(f"""<div class="feed-item">
+                    <div class="feed-source">{icon} {source}</div>
+                    <div class="feed-action">{act.get('action','')}</div>
+                    <div class="feed-enabled">
+                        <div class="feed-enabled-label">What this enabled</div>
+                        {act.get('what_it_enabled','')}
+                    </div>
                 </div>""", unsafe_allow_html=True)
             for w in rpt.get("behavior_patterns",{}).get("areas_to_watch",[]):
                 st.markdown(f'<span class="pat-watch">⚡ {w}</span>', unsafe_allow_html=True)
@@ -527,45 +683,27 @@ def _do_chat(prompt, company_data, employee):
     st.rerun()
 
 
-# ══════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════
 # MAIN
-# ══════════════════════════════════════════════════
+# ══════════════════════════════════════════════════════════
 
 def main():
-    from setup_wizard import render_wizard, render_auth
-
-    # ── Auth gate — always check first ──
-    if not st.session_state.get("authenticated"):
-        render_auth()
-        return
-
-    # ── Check if setup is needed ──
     companies = get_available_companies()
-
-    # If no companies exist and setup not complete, show wizard
-    if not companies and not st.session_state.get("setup_complete"):
-        render_wizard()
-        return
-
-    # If user clicked "set up new company"
-    if st.session_state.get("setup_complete") is False:
-        render_wizard()
-        return
-
-    # If setup just completed, load the new company
-    if st.session_state.get("setup_complete") and st.session_state.get("active_company"):
-        companies = get_available_companies()
-
     if not companies:
-        render_wizard()
+        st.markdown("""<div style="text-align:center;padding:80px 40px;">
+            <div style="font-size:2rem;margin-bottom:8px;">◉ AlignmentOS</div>
+            <div style="color:var(--text-3);">Add a company JSON to <code>company_data/</code> to begin.</div>
+        </div>""", unsafe_allow_html=True)
         return
 
-    # ── Load company ──
-    active = st.session_state.get("active_company", companies[0])
-    if active not in companies:
-        active = companies[0]
+    # If multiple companies, let user pick
+    if len(companies) > 1:
+        with st.sidebar:
+            selected_company = st.selectbox("Company", companies)
+    else:
+        selected_company = companies[0]
 
-    company_data = load_company(active)
+    company_data = load_company(selected_company)
     if not company_data:
         st.error("Could not load company data.")
         return
@@ -597,28 +735,6 @@ def main():
                 st.session_state.chat_history = []
                 st.rerun()
 
-        # Company management
-        st.divider()
-        if len(companies) > 1:
-            st.markdown("##### Switch company")
-            new_company = st.selectbox("Company", companies, 
-                index=companies.index(active) if active in companies else 0,
-                label_visibility="collapsed", key="company_picker")
-            if new_company != active:
-                st.session_state.active_company = new_company
-                st.session_state.chat_history = []
-                if "last_employee" in st.session_state:
-                    del st.session_state.last_employee
-                st.rerun()
-
-        if st.button("＋ Set up new company", use_container_width=True):
-            st.session_state.setup_complete = False
-            if "wizard_data" in st.session_state:
-                del st.session_state.wizard_data
-            if "wizard_step" in st.session_state:
-                del st.session_state.wizard_step
-            st.rerun()
-
     if not employee:
         return
 
@@ -629,13 +745,15 @@ def main():
     has_reports = bool(get_direct_reports(company_data, employee))
 
     if has_reports:
-        t1, t2, t3, t4 = st.tabs(["◉  Your Reality", "👥  Team", "🌊  Collective", "💬  Align"])
+        t1, tp, t2, t3, t4 = st.tabs(["◉  Your Reality", "🔵  Org Pulse", "👥  Team", "🌊  Collective", "💬  Align"])
     else:
-        t1, t3, t4 = st.tabs(["◉  Your Reality", "🌊  Collective", "💬  Align"])
+        t1, tp, t3, t4 = st.tabs(["◉  Your Reality", "🔵  Org Pulse", "🌊  Collective", "💬  Align"])
         t2 = None
 
     with t1:
         view_your_reality(company_data, employee)
+    with tp:
+        view_org_pulse(company_data, employee)
     if t2:
         with t2:
             view_team(company_data, employee)
