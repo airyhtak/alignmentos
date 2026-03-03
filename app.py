@@ -696,12 +696,13 @@ def main():
         </div>""", unsafe_allow_html=True)
         return
 
-    # If multiple companies, let user pick
-    if len(companies) > 1:
-        with st.sidebar:
-            selected_company = st.selectbox("Company", companies)
-    else:
-        selected_company = companies[0]
+    # ── Sidebar ──
+    with st.sidebar:
+        # Company selector (always visible)
+        if len(companies) > 1:
+            selected_company = st.selectbox("Company", companies, key="company_select")
+        else:
+            selected_company = companies[0]
 
     company_data = load_company(selected_company)
     if not company_data:
