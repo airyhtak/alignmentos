@@ -1,5 +1,14 @@
 # AlignmentOS — Claude Code Guide
 
+## Before Starting Work
+Check `docs/index.md` for prior decisions and research. Key docs:
+- **Backlog & priorities** → `docs/backlog-consensus-matrix.md`
+- **Database migration plan** → `docs/database-research.md` (MongoDB Atlas, not yet implemented)
+- **Full data model** → `docs/architecture/data-model.md`
+- **Deployment & secrets** → `docs/architecture/deployment.md`
+
+When completing significant research or architectural decisions, add a doc to `docs/` and update `docs/index.md`.
+
 ## What This Is
 Streamlit prototype replacing OKRs with "enablement narratives" — connecting individual work to commercial outcomes through a Beginning → Middle → End framework. Central question: **"What did your work enable?"**
 
