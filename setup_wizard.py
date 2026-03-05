@@ -9,12 +9,17 @@ from datetime import datetime, timedelta
 from pathlib import Path
 from data_loader import save_company, DATA_DIR
 
-# ── Invite codes (add/remove as needed) ──
-VALID_INVITE_CODES = {
-    "ALIGNME2026",
-    "SHAREDREALITY",
-    "DESIGNPARTNER",
-}
+# ── Invite codes — loaded from st.secrets in production, fallback for local dev ──
+def _load_invite_codes():
+    try:
+        raw = st.secrets.get("INVITE_CODES", "")
+        if raw:
+            return {c.strip().upper() for c in raw.split(",") if c.strip()}
+    except Exception:
+        pass
+    return {"ALIGNME2026", "SHAREDREALITY", "DESIGNPARTNER"}
+
+VALID_INVITE_CODES = _load_invite_codes()
 
 
 def check_invite_code(code):
@@ -61,6 +66,37 @@ def render_step_company():
         placeholder="What does your company exist to do?", height=80)
     w["vision"] = st.text_area("Vision", value=w.get("vision", ""), 
         placeholder="Where are you headed? (optional)", height=80)
+
+    # Company values
+    st.markdown('<div class="sec">Values</div>', unsafe_allow_html=True)
+    st.caption("What does your company stand for? Add 2-5 values with behavioral definitions.")
+
+    if "values" not in w:
+        w["values"] = [{"name": "", "behavioral_definition": ""}]
+
+    values_to_remove = None
+    for i, val in enumerate(w["values"]):
+        c1, c2, c3 = st.columns([2, 4, 0.5])
+        with c1:
+            val["name"] = st.text_input("Value", value=val.get("name", ""), key=f"val_name_{i}",
+                placeholder="e.g., Move Fast")
+        with c2:
+            val["behavioral_definition"] = st.text_input("What does this look like in practice?",
+                value=val.get("behavioral_definition", ""), key=f"val_def_{i}",
+                placeholder="e.g., We ship before perfect and iterate based on real feedback")
+        with c3:
+            st.markdown("<br>", unsafe_allow_html=True)
+            if len(w["values"]) > 1 and st.button("✕", key=f"rm_val_{i}"):
+                values_to_remove = i
+
+    if values_to_remove is not None:
+        w["values"].pop(values_to_remove)
+        st.rerun()
+
+    if len(w["values"]) < 6:
+        if st.button("＋ Add value"):
+            w["values"].append({"name": "", "behavioral_definition": ""})
+            st.rerun()
 
     # Company goals
     st.markdown('<div class="sec">Company Goals</div>', unsafe_allow_html=True)

@@ -4,9 +4,18 @@
 from dotenv import load_dotenv
 load_dotenv()
 
+import os
 import anthropic
 import json
 from datetime import datetime
+
+def _get_api_key():
+    """Read API key from st.secrets (Streamlit Cloud) or environment."""
+    try:
+        import streamlit as st
+        return st.secrets.get("ANTHROPIC_API_KEY") or os.environ.get("ANTHROPIC_API_KEY")
+    except Exception:
+        return os.environ.get("ANTHROPIC_API_KEY")
 
 SYSTEM_PROMPT = """You are Align, the Shared Reality layer for {company_name}. You help people see how their work connects to and enables the collective.
 
@@ -279,7 +288,7 @@ Work → {dept.get('strategic_focus', '')} → {dept.get('goal_contribution', ''
 def get_align_response(user_message, company_data, employee=None, conversation_history=None):
     """Get a response from Align, the Shared Reality agent."""
     
-    client = anthropic.Anthropic()
+    client = anthropic.Anthropic(api_key=_get_api_key())
     
     company_name = company_data.get('company_name', 'Unknown Company')
     current_date = datetime.now().strftime("%B %d, %Y")
@@ -307,7 +316,7 @@ def get_align_response(user_message, company_data, employee=None, conversation_h
     
     try:
         response = client.messages.create(
-            model="claude-sonnet-4-20250514",
+            model="claude-sonnet-4-6",
             max_tokens=1500,
             system=full_prompt,
             messages=messages
