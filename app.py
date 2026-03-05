@@ -27,15 +27,8 @@ def main():
     companies = get_available_companies()
 
     # ── Setup wizard for new installs ──
-    if not companies or not st.session_state.get("authenticated") and not companies:
+    if not companies or not st.session_state.get("authenticated"):
         render_wizard()
-        return
-
-    if not companies:
-        st.markdown("""<div style="text-align:center;padding:80px 40px;">
-            <div style="font-size:2rem;margin-bottom:8px;">◉ AlignmentOS</div>
-            <div style="color:var(--text-3);">Add a company JSON to <code>company_data/</code> to begin.</div>
-        </div>""", unsafe_allow_html=True)
         return
 
     # ── Sidebar ──

@@ -39,6 +39,7 @@ def time_ago(date_str):
 
 
 def mom_class(velocity):
+    velocity = velocity or ""
     return "mom-up" if any(w in velocity.lower() for w in ["accel", "strong", "upward"]) else "mom-mid"
 
 

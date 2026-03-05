@@ -108,7 +108,7 @@ def view_org_pulse(company_data, employee):
     if priorities:
         st.markdown('<div class="sec">Company Goals</div>', unsafe_allow_html=True)
         cols = st.columns(min(len(priorities), 4))
-        for i, g in enumerate(priorities):
+        for i, g in enumerate(priorities[:len(cols)]):
             with cols[i]:
                 st.markdown(f"""<div class="goal-card">
                     <div class="goal-title">{g.get('goal','')}</div>
@@ -132,7 +132,7 @@ def view_collective(company_data):
     if priorities:
         st.markdown('<div class="sec">Company Goals</div>', unsafe_allow_html=True)
         cols = st.columns(min(len(priorities), 4))
-        for i, g in enumerate(priorities):
+        for i, g in enumerate(priorities[:len(cols)]):
             with cols[i]:
                 st.markdown(f"""<div class="goal-card">
                     <div class="goal-title">{g.get('goal','')}</div>
