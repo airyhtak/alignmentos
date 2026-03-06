@@ -6,7 +6,7 @@ import re
 import streamlit as st
 from datetime import datetime
 from data_loader import save_company
-from wizard.simulation import generate_simulated_data
+from wizard.simulation import generate_simulated_data, enhance_with_ai
 
 
 # ── Invite codes — loaded from st.secrets in production, fallback for local dev ──
@@ -30,8 +30,9 @@ def slugify(name):
     return re.sub(r'[^a-z0-9]+', '_', name.lower()).strip('_')
 
 
-def build_company_json(wizard_data):
-    """Convert wizard form data into the full company JSON config."""
+def build_company_json(wizard_data, on_progress=None):
+    """Convert wizard form data into the full company JSON config.
+    on_progress(step, total, message) is called during generation if provided."""
 
     financials = {}
     fin = wizard_data.get("financials", {})
@@ -97,7 +98,22 @@ def build_company_json(wizard_data):
         })
 
     # Generate simulated data after all employees added (network connections need full list)
-    for emp in company_data["employees"]:
+    emp_count = len(company_data["employees"])
+    total_steps = emp_count * 2  # deterministic + AI pass
+
+    for i, emp in enumerate(company_data["employees"]):
+        if on_progress:
+            on_progress(i + 1, total_steps, f"Generating data for {emp['name']}...")
         generate_simulated_data(emp, company_data)
+
+    # AI enhancement pass — enriches narratives with industry-specific language
+    # Falls back silently to template data if no API key or on failure
+    ai_enhanced = 0
+    for i, emp in enumerate(company_data["employees"]):
+        if on_progress:
+            on_progress(emp_count + i + 1, total_steps, f"Enhancing {emp['name']} with AI...")
+        if enhance_with_ai(emp, company_data):
+            ai_enhanced += 1
+    company_data["_ai_enhanced"] = ai_enhanced
 
     return company_data

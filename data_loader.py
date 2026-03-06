@@ -87,6 +87,18 @@ def get_org_tree(company_data, employee):
     return result
 
 
+def get_effective_org(company_data, employee):
+    """Get the org a leader should see: direct tree if available, else all employees for top-level roles."""
+    org = get_org_tree(company_data, employee)
+    if org:
+        return org
+    # Top-level exec with no reporting chain — show all other employees
+    role_level = employee.get("role_level", "ic")
+    if role_level in ("c-suite", "vp", "director"):
+        return [e for e in company_data.get("employees", []) if e.get("name") != employee.get("name")]
+    return org
+
+
 def get_team_summary(reports):
     """Aggregate momentum, indicators, and activity stats for a list of reports."""
     momentum_counts = {"accelerating": 0, "building": 0, "steady": 0, "emerging": 0}

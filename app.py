@@ -2,7 +2,7 @@
 # Entry point: page config, style injection, sidebar, tab routing.
 
 import streamlit as st
-from data_loader import get_available_companies, load_company, get_employee_by_name, get_direct_reports
+from data_loader import get_available_companies, load_company, get_employee_by_name, get_direct_reports, get_effective_org
 from ui.styles import inject_styles
 from ui.components import render_top_bar, mom_class
 from ui.views import view_your_reality, view_org_pulse, view_collective, view_team, view_chat
@@ -73,11 +73,13 @@ def main():
 
     # ── Tab routing ──
     has_reports = bool(get_direct_reports(company_data, employee))
-    if has_reports:
+    is_leader = employee.get("role_level", "ic") in ("director", "vp", "c-suite")
+    show_team = has_reports or is_leader
+    if show_team:
         t1, tp, t2, t3, t4 = st.tabs(["◉  Your Reality", "🔵  Org Pulse", "👥  Team", "🌊  Collective", "💬  Align"])
     else:
         t1, tp, t3, t4 = st.tabs(["◉  Your Reality", "🔵  Org Pulse", "🌊  Collective", "💬  Align"])
-        t2 = None
+        t2 = None  # noqa: F841
 
     with t1:
         view_your_reality(company_data, employee)

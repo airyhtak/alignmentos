@@ -4,7 +4,7 @@
 import streamlit as st
 from html import escape as esc
 from agent import get_align_response
-from data_loader import get_direct_reports, get_org_tree, get_team_summary, get_employee_department
+from data_loader import get_direct_reports, get_org_tree, get_effective_org, get_team_summary, get_employee_department
 from ui.components import (
     get_source_icon, time_ago, mom_class,
     render_indicators, render_chain, render_patterns, render_network,
@@ -12,10 +12,12 @@ from ui.components import (
 
 
 def _build_hero(employee, company_data):
-    """Build the impact summary hero block from recent activities."""
+    """Build the shoutout hero — personal, celebratory, impact-first."""
     acts = employee.get("recent_activities", [])
     if not acts:
         return ""
+
+    first_name = employee["name"].split()[0]
 
     # Count unique departments and goals touched
     depts_touched = set()
@@ -28,24 +30,22 @@ def _build_hero(employee, company_data):
         if lg:
             goals_touched.add(lg)
 
-    # Pick the most impactful enabled text (first activity, typically highest impact)
+    # Pick the most impactful enabled text
     top_enabled = acts[0].get("what_it_enabled", "")
 
-    # Build the hero statement
-    parts = []
-    if len(acts) >= 2:
-        parts.append(f'<span class="ht-num">{len(acts)}</span> contributions this week')
+    # Build a prose ripple line instead of clinical tokens
+    ripple_parts = []
     if depts_touched:
-        parts.append(f'touched <span class="ht-num">{len(depts_touched)}</span> department{"s" if len(depts_touched) != 1 else ""}')
+        dept_list = ", ".join(sorted(depts_touched)[:3])
+        ripple_parts.append(f"Your work rippled into <strong>{esc(dept_list)}</strong>")
     if goals_touched:
-        parts.append(f'moved <span class="ht-num">{len(goals_touched)}</span> company goal{"s" if len(goals_touched) != 1 else ""}')
-
-    tokens_html = ""
-    if parts:
-        tokens_html = '<div class="hero-tokens">'
-        for p in parts:
-            tokens_html += f'<div class="hero-token">{p}</div>'
-        tokens_html += '</div>'
+        goal_short = list(goals_touched)[0]
+        if len(goal_short) > 60:
+            goal_short = goal_short[:57] + "..."
+        ripple_parts.append(f"moving the needle on <strong>{esc(goal_short)}</strong>")
+    ripple_html = ""
+    if ripple_parts:
+        ripple_html = f'<div class="hero-ripple">{" — ".join(ripple_parts)}.</div>'
 
     mom = employee.get("momentum", {})
     vel = mom.get("velocity", "")
@@ -53,12 +53,13 @@ def _build_hero(employee, company_data):
     direction = mom.get("direction", "")
     momentum_html = ""
     if vel:
-        momentum_html = f'<div class="hero-momentum {mc}">● {esc(vel)} — {esc(direction)}</div>'
+        momentum_html = f'<div class="hero-momentum {mc}">{esc(direction)}</div>'
 
     return (
         f'<div class="hero-impact">'
-        f'<div class="hero-statement"><strong>{esc(top_enabled)}</strong></div>'
-        f'{tokens_html}'
+        f'<div class="hero-greeting">Here\'s what became possible because of you, {esc(first_name)}.</div>'
+        f'<div class="hero-statement">{esc(top_enabled)}</div>'
+        f'{ripple_html}'
         f'{momentum_html}'
         f'</div>'
     )
@@ -101,6 +102,27 @@ def render_impact_feed(employee, company_data):
             f'{goal_tag}'
             f'<div class="feed-action">{icon} {esc(act.get("action",""))} · {time_str}</div>'
             f'</div>', unsafe_allow_html=True)
+
+
+def _render_shoutout_section(company_data, employee):
+    """Let employees shout out a colleague's impact."""
+    all_names = [e["name"] for e in company_data.get("employees", []) if e["name"] != employee["name"]]
+    if not all_names:
+        return
+
+    st.markdown(
+        '<div style="margin-top:20px;font-size:.78rem;color:var(--text-3);font-weight:500;">'
+        'See someone whose work enabled yours?</div>',
+        unsafe_allow_html=True)
+
+    with st.expander("Shout someone out"):
+        with st.form("shoutout_form", clear_on_submit=True):
+            who = st.selectbox("Who?", [""] + all_names, label_visibility="collapsed")
+            what = st.text_input("What did their work enable for you?", placeholder="e.g., Their API fix unblocked our launch timeline")
+            submitted = st.form_submit_button("Send shoutout")
+            if submitted and who and what:
+                st.success(f"Shoutout sent to {who}!")
+                st.caption("In the future, this will appear in their feed as recognition from a colleague.")
 
 
 def render_org_pulse_feed(company_data, current_employee):
@@ -156,7 +178,7 @@ def _render_prose_chain(company_data, employee):
 
 
 def view_your_reality(company_data, employee):
-    # Hero impact summary — the shoutout moment
+    # Hero — the shoutout moment
     hero_html = _build_hero(employee, company_data)
     if hero_html:
         st.markdown(hero_html, unsafe_allow_html=True)
@@ -166,6 +188,9 @@ def view_your_reality(company_data, employee):
 
     # Prose alignment chain
     _render_prose_chain(company_data, employee)
+
+    # Shout someone out
+    _render_shoutout_section(company_data, employee)
 
 
 def view_org_pulse(company_data, employee):
@@ -268,7 +293,7 @@ def view_collective(company_data):
 
 def _render_exec_overview(company_data, employee):
     """Executive overlay: org momentum, department cards, talent signals."""
-    org = get_org_tree(company_data, employee)
+    org = get_effective_org(company_data, employee)
     if len(org) < 2:
         return
 
@@ -399,14 +424,14 @@ def _render_exec_overview(company_data, employee):
 
 def view_team(company_data, employee):
     reports = get_direct_reports(company_data, employee)
-    if not reports:
-        st.info("No direct reports found.")
-        return
 
     # Executive overlay for director+ roles
     role_level = employee.get("role_level", "ic")
     if role_level in ("director", "vp", "c-suite"):
         _render_exec_overview(company_data, employee)
+
+    if not reports:
+        return
 
     # -- Layer 1: Team Pulse Summary --
     summary = get_team_summary(reports)

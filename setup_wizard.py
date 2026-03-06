@@ -440,19 +440,30 @@ def render_step_review():
             st.session_state.wizard_step = 3
             st.rerun()
     with col_r:
-        if st.button("🚀 Launch AlignmentOS", use_container_width=True, type="primary"):
-            with st.spinner("Generating your Shared Reality..."):
-                company_data = build_company_json(w)
-                company_id = slugify(w["company_name"])
-                save_company(company_id, company_data)
-                st.session_state.setup_complete = True
-                st.session_state.active_company = company_id
-                # Clean up wizard state
-                if "wizard_data" in st.session_state:
-                    del st.session_state.wizard_data
-                if "wizard_step" in st.session_state:
-                    del st.session_state.wizard_step
-                st.rerun()
+        if st.button("Launch AlignmentOS", use_container_width=True, type="primary"):
+            progress = st.progress(0, text="Building company structure...")
+
+            def on_progress(step, total, message):
+                progress.progress(min(step / total, 0.99), text=message)
+
+            company_data = build_company_json(w, on_progress=on_progress)
+            progress.progress(1.0, text="Generation complete.")
+
+            ai_count = company_data.pop("_ai_enhanced", 0)
+            company_id = slugify(w["company_name"])
+            save_company(company_id, company_data)
+
+            if ai_count:
+                st.toast(f"AI-enhanced narratives for {ai_count} of {emp_count} people.")
+
+            st.session_state.setup_complete = True
+            st.session_state.active_company = company_id
+            # Clean up wizard state
+            if "wizard_data" in st.session_state:
+                del st.session_state.wizard_data
+            if "wizard_step" in st.session_state:
+                del st.session_state.wizard_step
+            st.rerun()
 
 
 # ══════════════════════════════════════════════════

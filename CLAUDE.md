@@ -12,7 +12,7 @@ When completing significant research or architectural decisions, add a doc to `d
 ## What This Is
 AlignmentOS is the **interpretation layer** between tools and strategy. It reads work signals across every vendor and answers the question no tool can: **"What did this work enable?"**
 
-Streamlit prototype — connecting individual work to commercial outcomes through a Beginning → Middle → End framework.
+Streamlit prototype — a Work Intelligence Platform connecting individual work to commercial outcomes through enablement narratives. Not an OKR tool, not an activity tracker — a passive interpretation layer.
 
 ## Two-Sided Product
 
@@ -52,11 +52,15 @@ streamlit run app.py
 ## Architecture
 
 ```
-app.py          — UI, design system (inline CSS), 5 tabs, Plotly network graph
-agent.py        — Claude API ("Align" agent), context builders, system prompt
-data_loader.py  — JSON file I/O, employee/dept lookups, build_enablement_chain
-setup_wizard.py — 4-step onboarding wizard + deterministic simulated data generation
-company_data/   — petfolk.json, warner_chappell_music.json (rich demo datasets)
+app.py              — Entry point: page config, style injection, sidebar, tab routing
+agent.py            — Claude API ("Align" agent), context builders, system prompt
+data_loader.py      — JSON file I/O, employee/dept lookups, org tree, team summaries
+setup_wizard.py     — 4-step onboarding wizard
+wizard/simulation.py — Deterministic simulated data generation (templates + interpolation)
+ui/views.py         — Tab views: Your Reality, Org Pulse, Team, Collective, Align
+ui/components.py    — Leaf rendering primitives (top bar, indicators, patterns, network)
+ui/styles.py        — All CSS (design system, feed items, hero, exec cards)
+company_data/       — petfolk.json, warner_chappell_music.json (rich demo datasets)
 ```
 
 ### Data Flow
@@ -84,9 +88,9 @@ Wizard (company → depts → people) → company_data/{slug}.json → dashboard
 ## The Five Tabs
 | Tab | Who Sees It | What It Shows |
 |-----|-------------|---------------|
-| Your Reality | Everyone | Live feed, work→outcome chain, indicators, network graph, patterns |
+| Your Reality | Everyone | Hero impact summary, inverted feed (enablement first), prose chain |
 | Org Pulse | Everyone | Cross-company activity feed, company goals |
-| Team | Managers only (`has_reports`) | Direct reports' momentum + enablement |
+| Team | Leaders (`has_reports` or `role_level` in director/vp/c-suite) | Exec overview + direct reports' momentum + enablement |
 | Collective | Everyone | Mission, goals, financials, departments |
 | Align | Everyone | Claude AI chat grounded in full company context |
 
@@ -115,16 +119,17 @@ HTML components are rendered via `st.markdown(..., unsafe_allow_html=True)`. Kee
 - **Two-sided behavior:** Adapts tone by `role_level` — recognition for ICs, performance intelligence for managers, strategic ROI for execs
 - System prompt enforces the 7 Shared Reality principles + commercial pillars — read it before modifying
 
-## Simulated Data Generation (`setup_wizard.py`)
-- `generate_simulated_data(employee, company_data)` — deterministic, seeded by employee name
-- Branches by department keyword → activity templates → indicators → momentum → patterns
-- Already reads `company_data["values"]` for behavior patterns (lines ~505-520)
-- Do NOT make this non-deterministic without adding async UX handling in the wizard
+## Simulated Data Generation (`wizard/simulation.py`)
+- **Deterministic pass:** `generate_simulated_data(employee, company_data)` — seeded by employee name, always works
+- **AI enhancement pass:** `enhance_with_ai(employee, company_data)` — Claude Haiku rewrites `detail`, `what_it_enabled`, `connected_to.how` with industry-specific language. Graceful fallback on API failure.
+- Templates interpolate: `{company}`, `{industry}`, `{role_purpose}`, `{dept_focus}`, `{goal_1}`, `{goal_2}`, `{deal_size}`, `{pipeline_size}`
+- Financial figures scale from `company_goals.financial_targets` (ARR-based)
+- `build_company_json()` accepts `on_progress(step, total, message)` callback for UI progress
 
 ## Current Constraints (don't work around these without discussion)
 - **No database** — flat JSON files only; all data in `company_data/`
 - **No real auth** — identity is a sidebar dropdown, not a session
-- **No RBAC** — tab gating is `bool(get_direct_reports(...))` only
+- **No RBAC** — tab gating uses `role_level` + `get_direct_reports()` (no session-based auth)
 - **No live integrations** — all activity data is simulated
 - **No tests** — `data_loader.py` is the safest place to add first smoke tests
 
@@ -134,10 +139,13 @@ HTML components are rendered via `st.markdown(..., unsafe_allow_html=True)`. Kee
 - [x] linked_goal field — Goals assigned at generation, not keyword-matched
 - [x] Momentum 3 states — accelerating (green), building/steady (indigo), emerging (amber)
 - [x] Two-sided system prompt — Recognition for ICs, performance intelligence for managers/execs
-- [ ] C-full — AI-powered simulated data (full Claude generation per employee)
+- [x] Your Reality redesign — hero impact, inverted feed, prose chain
+- [x] Enhanced Team tab — exec overview, performance intelligence, behavior patterns
+- [x] RBAC persona fix — C-suite/VP/Director see Team tab regardless of direct reports
+- [x] Template interpolation — industry, financial scaling, role_purpose, connected_to
+- [x] C-full — AI enhancement pass (Claude Haiku rewrites narratives, graceful fallback to templates)
 - [ ] Reshape employee experience toward shoutout feeling
-- [ ] RBAC design (foundational to delivering right experience per role)
-- [ ] Enhanced Team tab — lean into performance intelligence
+- [ ] RBAC design (session-based auth, role-appropriate views)
 - [ ] G — Financial data upload (CSV, closes the narrative loop)
 - [ ] E — Jira integration (first live Beginning signal)
 

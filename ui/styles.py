@@ -73,49 +73,38 @@ html, body, [class*="css"] { font-family: var(--sans); }
     padding: 28px 0 20px;
     margin-bottom: 8px;
 }
+.hero-greeting {
+    font-size: .82rem;
+    color: var(--text-3);
+    font-weight: 400;
+    margin-bottom: 10px;
+    letter-spacing: .01em;
+}
 .hero-statement {
     font-size: 1.25rem;
-    font-weight: 400;
+    font-weight: 500;
     color: var(--text);
     line-height: 1.55;
     letter-spacing: -.01em;
 }
-.hero-statement strong {
-    color: var(--green);
+.hero-ripple {
+    font-size: .85rem;
+    color: var(--text-2);
+    line-height: 1.5;
+    margin-top: 12px;
+}
+.hero-ripple strong {
+    color: var(--accent);
     font-weight: 600;
 }
-.hero-tokens {
-    display: flex;
-    gap: 12px;
-    margin-top: 14px;
-    flex-wrap: wrap;
-}
-.hero-token {
-    display: inline-flex;
-    align-items: center;
-    gap: 5px;
-    padding: 5px 14px;
-    border-radius: 16px;
-    font-size: .75rem;
-    font-weight: 500;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    color: var(--text-2);
-}
-.hero-token .ht-num {
-    font-family: var(--mono);
-    font-weight: 700;
-    color: var(--text);
-}
 .hero-momentum {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    margin-top: 16px;
+    display: inline-block;
+    margin-top: 14px;
     padding: 8px 18px;
     border-radius: 20px;
-    font-size: .85rem;
+    font-size: .82rem;
     font-weight: 500;
+    font-style: italic;
 }
 .hero-momentum.mom-up { background: var(--green-bg); color: var(--green); border: 1px solid rgba(16,185,129,.2); }
 .hero-momentum.mom-mid { background: var(--accent-bg); color: var(--accent); border: 1px solid rgba(99,102,241,.2); }
