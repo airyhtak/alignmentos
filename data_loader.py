@@ -77,6 +77,81 @@ def get_direct_reports(company_data, employee):
     return [e for e in company_data.get("employees", []) if e.get("reports_to") == name]
 
 
+def get_org_tree(company_data, employee):
+    """Get all employees in the reporting chain below this person, recursively."""
+    result = []
+    directs = get_direct_reports(company_data, employee)
+    for d in directs:
+        result.append(d)
+        result.extend(get_org_tree(company_data, d))
+    return result
+
+
+def get_team_summary(reports):
+    """Aggregate momentum, indicators, and activity stats for a list of reports."""
+    momentum_counts = {"accelerating": 0, "building": 0, "steady": 0, "emerging": 0}
+    total_activities = 0
+    indicators_on_track = 0
+    indicators_total = 0
+    attention_people = []
+    connected_depts = set()
+    goal_links = {}
+
+    for rpt in reports:
+        vel = rpt.get("momentum", {}).get("velocity", "steady").lower()
+        momentum_counts[vel] = momentum_counts.get(vel, 0) + 1
+        acts = rpt.get("recent_activities", [])
+        total_activities += len(acts)
+
+        for act in acts:
+            ct = act.get("connected_to", {})
+            if ct and ct.get("department"):
+                connected_depts.add(ct["department"])
+            lg = act.get("linked_goal", "")
+            if lg:
+                goal_links[lg] = goal_links.get(lg, 0) + 1
+
+        for key, val in rpt.get("leading_indicators", {}).items():
+            if isinstance(val, dict):
+                indicators_total += 1
+                current = val.get("current", 0)
+                target = val.get("target", 1)
+                if target and current >= target * 0.7:
+                    indicators_on_track += 1
+
+        watch = rpt.get("behavior_patterns", {}).get("areas_to_watch", [])
+        needs_attention = (
+            vel in ("steady", "emerging")
+            and (len(watch) >= 2 or indicators_total > 0 and indicators_on_track < indicators_total * 0.5)
+        )
+        if needs_attention:
+            reason = []
+            if vel == "emerging":
+                reason.append("momentum is emerging")
+            if len(watch) >= 2:
+                reason.append(f"{len(watch)} areas to watch")
+            if indicators_total > 0 and indicators_on_track < indicators_total * 0.5:
+                reason.append("indicators below target")
+            attention_people.append({
+                "name": rpt["name"],
+                "role": rpt.get("role", ""),
+                "velocity": vel,
+                "reasons": reason,
+                "watch": watch,
+                "momentum": rpt.get("momentum", {}),
+            })
+
+    return {
+        "momentum_counts": momentum_counts,
+        "total_activities": total_activities,
+        "indicators_on_track": indicators_on_track,
+        "indicators_total": indicators_total,
+        "attention": attention_people,
+        "connected_depts": sorted(connected_depts),
+        "goal_links": goal_links,
+    }
+
+
 def build_enablement_chain(company_data, employee):
     """Build the Beginning → Middle → End narrative chain for an employee."""
     dept = get_employee_department(company_data, employee)

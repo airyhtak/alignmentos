@@ -4,6 +4,7 @@
 import streamlit as st
 import numpy as np
 import plotly.graph_objects as go
+from html import escape as esc
 from datetime import datetime
 from data_loader import get_employee_department, get_direct_reports
 
@@ -40,26 +41,31 @@ def time_ago(date_str):
 
 def mom_class(velocity):
     velocity = velocity or ""
-    return "mom-up" if any(w in velocity.lower() for w in ["accel", "strong", "upward"]) else "mom-mid"
+    v = velocity.lower()
+    if any(w in v for w in ["accel", "strong", "upward"]):
+        return "mom-up"
+    if any(w in v for w in ["emerging", "new", "early"]):
+        return "mom-emerging"
+    return "mom-mid"
 
 
 def render_top_bar(company_data, employee):
     momentum = employee.get("momentum", {}).get("velocity", "")
     mc = mom_class(momentum)
-    st.markdown(f"""
-    <div class="top-bar">
-        <div class="tb-left">
-            <div class="tb-logo">A</div>
-            <div>
-                <div class="tb-name">AlignmentOS</div>
-                <div class="tb-meta">{company_data.get('company_name','')} · {company_data.get('current_quarter','')}</div>
-            </div>
-        </div>
-        <div class="tb-person">
-            <strong>{employee['name']}</strong> · {employee.get('role','')}<br/>
-            <span class="mom-pill {mc}">● {momentum}</span>
-        </div>
-    </div>""", unsafe_allow_html=True)
+    st.markdown(
+        f'<div class="top-bar">'
+        f'<div class="tb-left">'
+        f'<div class="tb-logo">A</div>'
+        f'<div>'
+        f'<div class="tb-name">AlignmentOS</div>'
+        f'<div class="tb-meta">{esc(company_data.get("company_name",""))} · {esc(company_data.get("current_quarter",""))}</div>'
+        f'</div>'
+        f'</div>'
+        f'<div class="tb-person">'
+        f'<strong>{esc(employee["name"])}</strong> · {esc(employee.get("role",""))}<br/>'
+        f'<span class="mom-pill {mc}">● {esc(momentum)}</span>'
+        f'</div>'
+        f'</div>', unsafe_allow_html=True)
 
 
 def render_indicators(employee):
@@ -71,12 +77,14 @@ def render_indicators(employee):
     for key, val in indicators.items():
         if isinstance(val, dict):
             label = key.replace("_", " ").title()
-            html += f"""<div class="ind">
-                <div class="ind-label">{label}</div>
-                <div class="ind-val">{val.get('current','')}</div>
-                <div class="ind-target">→ {val.get('target','')}</div>
-                <div class="ind-trend">{val.get('trend','')}</div>
-            </div>"""
+            html += (
+                f'<div class="ind">'
+                f'<div class="ind-label">{esc(label)}</div>'
+                f'<div class="ind-val">{esc(str(val.get("current","")))}</div>'
+                f'<div class="ind-target">→ {esc(str(val.get("target","")))}</div>'
+                f'<div class="ind-trend">{esc(str(val.get("trend","")))}</div>'
+                f'</div>'
+            )
     html += '</div>'
     st.markdown(html, unsafe_allow_html=True)
 
@@ -92,13 +100,13 @@ def render_chain(company_data, employee):
         return s[:n] + "…" if len(s) > n else s
 
     st.markdown('<div class="sec">How Your Work Connects</div>', unsafe_allow_html=True)
-    st.markdown(f"""
-    <div class="chain">
-        <div class="chain-node"><div class="chain-lbl">Your Work</div><div class="chain-txt">{trunc(employee.get('role_purpose',''))}</div></div>
-        <div class="chain-node"><div class="chain-lbl">{dept.get('name','')} Focus</div><div class="chain-txt">{trunc(dept.get('strategic_focus',''))}</div></div>
-        <div class="chain-node"><div class="chain-lbl">Enables</div><div class="chain-txt">{trunc(dept.get('goal_contribution',''))}</div></div>
-        <div class="chain-node"><div class="chain-lbl">Company Goals</div><div class="chain-txt">{' · '.join(top)}</div></div>
-    </div>""", unsafe_allow_html=True)
+    st.markdown(
+        f'<div class="chain">'
+        f'<div class="chain-node"><div class="chain-lbl">Your Work</div><div class="chain-txt">{esc(trunc(employee.get("role_purpose","")))}</div></div>'
+        f'<div class="chain-node"><div class="chain-lbl">{esc(dept.get("name",""))} Focus</div><div class="chain-txt">{esc(trunc(dept.get("strategic_focus","")))}</div></div>'
+        f'<div class="chain-node"><div class="chain-lbl">Enables</div><div class="chain-txt">{esc(trunc(dept.get("goal_contribution","")))}</div></div>'
+        f'<div class="chain-node"><div class="chain-lbl">Company Goals</div><div class="chain-txt">{esc(" · ".join(top))}</div></div>'
+        f'</div>', unsafe_allow_html=True)
 
 
 def render_patterns(employee):

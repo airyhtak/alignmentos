@@ -10,7 +10,37 @@ Check `docs/index.md` for prior decisions and research. Key docs:
 When completing significant research or architectural decisions, add a doc to `docs/` and update `docs/index.md`.
 
 ## What This Is
-Streamlit prototype replacing OKRs with "enablement narratives" — connecting individual work to commercial outcomes through a Beginning → Middle → End framework. Central question: **"What did your work enable?"**
+AlignmentOS is the **interpretation layer** between tools and strategy. It reads work signals across every vendor and answers the question no tool can: **"What did this work enable?"**
+
+Streamlit prototype — connecting individual work to commercial outcomes through a Beginning → Middle → End framework.
+
+## Two-Sided Product
+
+| Side | Experience | Tone |
+|------|-----------|------|
+| **Employee** | Recognition, visibility, motivation — passive shoutouts | "Your work matters — here's proof" |
+| **Manager** | Performance intelligence, coaching signals | "Here's who's thriving, who needs support, and what to act on" |
+| **Executive** | ROI, alignment, strategic decision-making | "Here's how your people drive the business — in real time" |
+
+Momentum, engagement, and performance signals ARE the value prop for managers/execs. The employee side is recognition-first.
+
+## Feed Item Structure
+
+Each feed item follows this narrative format:
+- WHAT YOU DID → source tool + action
+- WHO IT CONNECTED → `connected_to` field (name, department, how they were unblocked)
+- WHAT IT ENABLED → financial or strategic outcome, quantified where possible
+- LINKED GOAL → `linked_goal` field (assigned at generation, not keyword-matched)
+
+## Integration Vision (Roadmap Direction)
+
+Designed to ingest signals from every tool a business uses:
+- Work & Projects: Jira, Asana, Linear, GitHub
+- Revenue & CRM: Salesforce, HubSpot
+- Communication: Slack, Gmail
+- People & HR: Workday, BambooHR, Greenhouse
+- Finance: NetSuite, QuickBooks
+- Marketing: Meta Ads, Google Analytics
 
 ## Run Locally
 ```bash
@@ -41,9 +71,14 @@ Wizard (company → depts → people) → company_data/{slug}.json → dashboard
  "recent_activities", "leading_indicators", "momentum", "behavior_patterns", "network_position"}
 
 # Activity (the core unit)
-{"action", "detail", "date", "source", "what_it_enabled"}
+{"action", "detail", "date", "source", "what_it_enabled",
+ "linked_goal",    # str — assigned at generation, not keyword-matched
+ "connected_to"}   # {"name", "department", "how"} — cross-functional connection
 
 # role_level values: "ic" | "manager" | "director" | "vp" | "c-suite"
+
+# Momentum velocity values: "accelerating" | "building" | "steady" | "emerging"
+# Maps to 3 CSS states: mom-up (green), mom-mid (indigo), mom-emerging (amber)
 ```
 
 ## The Five Tabs
@@ -69,14 +104,16 @@ All CSS lives in the `st.markdown("""<style>...</style>""")` block at the top of
 --green, --green-bg, --amber, --amber-bg
 --mono (JetBrains Mono), --sans (DM Sans)
 ```
+Momentum pills: `.mom-up` (green/accelerating), `.mom-mid` (indigo/building+steady), `.mom-emerging` (amber/emerging).
+Feed items: `.feed-connected` for cross-functional connection, `.feed-goal-tag` for linked goal.
 HTML components are rendered via `st.markdown(..., unsafe_allow_html=True)`. Keep new components consistent with existing card/feed/pill patterns.
 
 ## AI Agent (Align)
 - Model: `claude-sonnet-4-6`
 - API key resolved via `_get_api_key()` — checks `st.secrets` first, falls back to env
 - Context is built fresh per request: `build_company_context()` + `build_person_context()`
-- Never scores people. Always frames as momentum, enablement, and patterns.
-- System prompt enforces the 7 Shared Reality principles — read it before modifying
+- **Two-sided behavior:** Adapts tone by `role_level` — recognition for ICs, performance intelligence for managers, strategic ROI for execs
+- System prompt enforces the 7 Shared Reality principles + commercial pillars — read it before modifying
 
 ## Simulated Data Generation (`setup_wizard.py`)
 - `generate_simulated_data(employee, company_data)` — deterministic, seeded by employee name
@@ -92,11 +129,17 @@ HTML components are rendered via `st.markdown(..., unsafe_allow_html=True)`. Kee
 - **No tests** — `data_loader.py` is the safest place to add first smoke tests
 
 ## Roadmap (priority order from consensus matrix)
-- [ ] C — AI-powered simulated data (inject company/role context into templates first, full Claude generation later)
+- [x] C-lite — Template interpolation (company/role/goal context injected into simulation)
+- [x] connected_to field — Cross-functional lens in feed items
+- [x] linked_goal field — Goals assigned at generation, not keyword-matched
+- [x] Momentum 3 states — accelerating (green), building/steady (indigo), emerging (amber)
+- [x] Two-sided system prompt — Recognition for ICs, performance intelligence for managers/execs
+- [ ] C-full — AI-powered simulated data (full Claude generation per employee)
+- [ ] Reshape employee experience toward shoutout feeling
+- [ ] RBAC design (foundational to delivering right experience per role)
+- [ ] Enhanced Team tab — lean into performance intelligence
 - [ ] G — Financial data upload (CSV, closes the narrative loop)
-- [ ] D — RBAC (needs session model design first)
 - [ ] E — Jira integration (first live Beginning signal)
-- [ ] I — Management diagnostics view (needs RBAC + more data)
 
 ## Invite Codes
 Loaded from `st.secrets["INVITE_CODES"]` (comma-separated string). Falls back to hardcoded defaults for local dev. Change production codes in Streamlit Cloud secrets — never in source.
